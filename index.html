@@ -17,8 +17,30 @@
 </head>
 <body>
 
+  <!-- Cursor Glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas"></canvas>
+
   <!-- Mobile Overlay -->
   <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Floating Social Sidebar -->
+  <div class="social-sidebar" id="socialSidebar">
+    <a href="https://x.com/hartvoorkampen" target="_blank" rel="noopener" aria-label="X / Twitter">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/hartvoorkampen/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg>
+    </a>
+    <a href="https://www.facebook.com/hartvoorkampen" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://wa.me/?text=Bekijk%20Hart%20voor%20Kampen%20-%20Lijst%208%20voor%20de%20gemeenteraadsverkiezingen!" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
 
   <!-- ============================================================
        1. NAVBAR
@@ -41,7 +63,13 @@
         <li class="nav-cta-mobile"><a href="#doe-mee" class="nav-cta">Stem Lijst 8</a></li>
       </ul>
 
-      <a href="#doe-mee" class="nav-cta nav-cta-desktop">Stem Lijst 8</a>
+      <div class="nav-right-group">
+        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Donkere modus">
+          <span class="icon-sun">&#9788;</span>
+          <span class="icon-moon">&#9790;</span>
+        </button>
+        <a href="#doe-mee" class="nav-cta nav-cta-desktop">Stem Lijst 8</a>
+      </div>
 
       <button class="hamburger" id="hamburger" aria-label="Open menu">
         <span></span>
@@ -57,7 +85,9 @@
   <section id="home" class="hero">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
-    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-particles" id="heroParticles">
+      <canvas id="heroParticleCanvas"></canvas>
+    </div>
 
     <div class="hero-content">
       <div class="hero-badge">
@@ -65,7 +95,7 @@
         Gemeenteraadsverkiezingen 18 maart 2026 &mdash; Lijst 8
       </div>
 
-      <h1>Lokale vertegenwoordiging, korte lijnen, <span class="accent">daadkrachtig</span> bestuur</h1>
+      <h1><span class="hero-line">Lokale vertegenwoordiging,</span> <span class="hero-line">korte lijnen,</span> <span class="hero-line"><span class="accent">daadkrachtig</span> bestuur</span></h1>
 
       <p class="hero-subtitle">Hart voor Kampen maakt van Kampen de beste plek om te wonen, ondernemen en recre&euml;ren. Met transparantie, burgerparticipatie en meer dan 100 jaar politieke ervaring.</p>
 
@@ -91,6 +121,7 @@
           <span class="countdown-number" id="cd-seconds">--</span>
           <span class="countdown-label">Seconden</span>
         </div>
+        <button class="confetti-trigger" id="confettiBtn" title="Feest!">&#127881;</button>
       </div>
     </div>
 
@@ -113,7 +144,8 @@
       </div>
 
       <div class="values-grid">
-        <div class="value-card reveal delay-1">
+        <div class="value-card tilt-card reveal delay-1">
+          <div class="tilt-shine"></div>
           <div class="value-icon">
             <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
@@ -121,7 +153,8 @@
           <p>Inwoners betrekken bij alles wat in hun leefomgeving gebeurt. Uw stem telt, niet alleen op verkiezingsdag.</p>
         </div>
 
-        <div class="value-card reveal delay-2">
+        <div class="value-card tilt-card reveal delay-2">
+          <div class="tilt-shine"></div>
           <div class="value-icon">
             <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
@@ -129,7 +162,8 @@
           <p>Wij zijn voor volstrekte openbaarheid van bestuur. Geen achterkamertjespolitiek, maar open en eerlijk.</p>
         </div>
 
-        <div class="value-card reveal delay-3">
+        <div class="value-card tilt-card reveal delay-3">
+          <div class="tilt-shine"></div>
           <div class="value-icon">
             <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           </div>
@@ -137,7 +171,8 @@
           <p>Korte lijnen en slagvaardig bestuur voor snelle resultaten. Niet praten, maar doen.</p>
         </div>
 
-        <div class="value-card reveal delay-4">
+        <div class="value-card tilt-card reveal delay-4">
+          <div class="tilt-shine"></div>
           <div class="value-icon">
             <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
@@ -147,6 +182,9 @@
       </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider section-divider--gradient"></div>
 
   <!-- ============================================================
        4. REMCO VAN VEEN ANNOUNCEMENT
@@ -328,6 +366,9 @@
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <div class="section-divider section-divider--gradient-reverse"></div>
+
   <!-- ============================================================
        6. OVER ONS
        ============================================================ -->
@@ -359,26 +400,33 @@
         </div>
 
         <div class="about-stats reveal-right">
-          <div class="stat-card">
-            <div class="stat-number">100+</div>
+          <div class="stat-card tilt-card">
+            <div class="tilt-shine"></div>
+            <div class="stat-number" data-count-to="100" data-count-suffix="+">0</div>
             <div class="stat-label">Jaar ervaring</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">8</div>
+          <div class="stat-card tilt-card">
+            <div class="tilt-shine"></div>
+            <div class="stat-number" data-count-to="8">0</div>
             <div class="stat-label">Lijstnummer</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">2</div>
+          <div class="stat-card tilt-card">
+            <div class="tilt-shine"></div>
+            <div class="stat-number" data-count-to="2">0</div>
             <div class="stat-label">Zetels in 2022</div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">2018</div>
+          <div class="stat-card tilt-card">
+            <div class="tilt-shine"></div>
+            <div class="stat-number" data-count-to="2018" data-count-from="2000">2000</div>
             <div class="stat-label">Opgericht</div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider section-divider--gradient"></div>
 
   <!-- ============================================================
        7. ONS TEAM
@@ -393,9 +441,10 @@
 
       <div class="team-grid">
         <!-- Nardus Koster -->
-        <div class="team-card reveal delay-1">
+        <div class="team-card tilt-card reveal delay-1">
+          <div class="tilt-shine"></div>
           <div class="team-photo-wrap">
-            <img src="nardus.jpg" alt="Nardus Koster">
+            <img src="nardus.jpg" alt="Nardus Koster" loading="lazy">
             <div class="team-photo-overlay"></div>
           </div>
           <div class="team-info">
@@ -410,9 +459,10 @@
         </div>
 
         <!-- Albert Holtland -->
-        <div class="team-card reveal delay-2">
+        <div class="team-card tilt-card reveal delay-2">
+          <div class="tilt-shine"></div>
           <div class="team-photo-wrap">
-            <img src="albert.jpg" alt="Albert Holtland">
+            <img src="albert.jpg" alt="Albert Holtland" loading="lazy">
             <div class="team-photo-overlay"></div>
           </div>
           <div class="team-info">
@@ -423,9 +473,10 @@
         </div>
 
         <!-- Ellen Koersen -->
-        <div class="team-card reveal delay-3">
+        <div class="team-card tilt-card reveal delay-3">
+          <div class="tilt-shine"></div>
           <div class="team-photo-wrap">
-            <img src="ellen.jpg" alt="Ellen Koersen">
+            <img src="ellen.jpg" alt="Ellen Koersen" loading="lazy">
             <div class="team-photo-overlay"></div>
           </div>
           <div class="team-info">
@@ -438,9 +489,10 @@
 
       <div class="team-bottom-row">
         <!-- Henk Prinsen -->
-        <div class="team-card reveal delay-4">
+        <div class="team-card tilt-card reveal delay-4">
+          <div class="tilt-shine"></div>
           <div class="team-photo-wrap">
-            <img src="henk.jpg" alt="Henk Prinsen">
+            <img src="henk.jpg" alt="Henk Prinsen" loading="lazy">
             <div class="team-photo-overlay"></div>
           </div>
           <div class="team-info">
@@ -451,10 +503,11 @@
         </div>
 
         <!-- Remco van Veen -->
-        <div class="team-card featured reveal delay-5">
+        <div class="team-card featured tilt-card reveal delay-5">
           <span class="team-badge-new">NIEUW!</span>
+          <div class="tilt-shine"></div>
           <div class="team-photo-wrap">
-            <img src="remco.jpg" alt="Remco van Veen">
+            <img src="remco.jpg" alt="Remco van Veen" loading="lazy">
             <div class="team-photo-overlay"></div>
           </div>
           <div class="team-info">
@@ -466,6 +519,9 @@
       </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider section-divider--gradient-reverse"></div>
 
   <!-- ============================================================
        8. DIT HEBBEN WIJ BEREIKT
@@ -481,76 +537,137 @@
       <div class="timeline">
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
+          <div class="timeline-content tilt-card">
+            <div class="tilt-shine"></div>
             <h4><span class="check-icon">&#10003;</span> Energie-compensatie voor kwetsbare inwoners gerealiseerd</h4>
           </div>
         </div>
 
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
+          <div class="timeline-content tilt-card">
+            <div class="tilt-shine"></div>
             <h4><span class="check-icon">&#10003;</span> Vischrookerij Van Heerde en Reumer behouden voor Kampen</h4>
           </div>
         </div>
 
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
+          <div class="timeline-content tilt-card">
+            <div class="tilt-shine"></div>
             <h4><span class="check-icon">&#10003;</span> Motie recyclbare bekers bij evenementen aangenomen</h4>
           </div>
         </div>
 
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
+          <div class="timeline-content tilt-card">
+            <div class="tilt-shine"></div>
             <h4><span class="check-icon">&#10003;</span> Motie Circulair Bouwen en Oogsten aangenomen (27 maart)</h4>
           </div>
         </div>
 
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
+          <div class="timeline-content tilt-card">
+            <div class="tilt-shine"></div>
             <h4><span class="check-icon">&#10003;</span> Motie camera-toezicht Station Kampen Zuid (met SGP, VVD, CDA)</h4>
           </div>
         </div>
 
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
+          <div class="timeline-content tilt-card">
+            <div class="tilt-shine"></div>
             <h4><span class="check-icon">&#10003;</span> Gast van de Raad voortgezet &mdash; unaniem aangenomen</h4>
           </div>
         </div>
 
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
+          <div class="timeline-content tilt-card">
+            <div class="tilt-shine"></div>
             <h4><span class="check-icon">&#10003;</span> Biodiversiteit op de kaart gezet in gemeentelijk beleid</h4>
           </div>
         </div>
 
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
+          <div class="timeline-content tilt-card">
+            <div class="tilt-shine"></div>
             <h4><span class="check-icon">&#10003;</span> Beheerder Kampereiland aangesteld</h4>
           </div>
         </div>
 
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
+          <div class="timeline-content tilt-card">
+            <div class="tilt-shine"></div>
             <h4><span class="check-icon">&#10003;</span> Groene Karavaan van de Provincie naar Kampen gehaald</h4>
           </div>
         </div>
 
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
-          <div class="timeline-content">
+          <div class="timeline-content tilt-card">
+            <div class="tilt-shine"></div>
             <h4><span class="check-icon">&#10003;</span> Bloemen voor Bijen project &mdash; raadsbesluit oktober 2020</h4>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider section-divider--gradient"></div>
+
+  <!-- ============================================================
+       PHOTO GALLERY: KAMPEN IN BEELD
+       ============================================================ -->
+  <section id="gallerij" class="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Fotogalerij</span>
+        <h2>Kampen in Beeld</h2>
+        <p>De schoonheid van onze gemeente in foto's</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal delay-1" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/20151027_Zicht_op_Kampen_vanaf_Stadsbrug.jpg/1200px-20151027_Zicht_op_Kampen_vanaf_Stadsbrug.jpg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/20151027_Zicht_op_Kampen_vanaf_Stadsbrug.jpg/400px-20151027_Zicht_op_Kampen_vanaf_Stadsbrug.jpg" alt="Zicht op Kampen vanaf Stadsbrug" loading="lazy">
+          <div class="gallery-zoom-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </div>
+        <div class="gallery-item reveal delay-2" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Kampen%2C_schip_langs_de_IJsselkade_foto5_2016-02-17_10.50.jpg/1200px-Kampen%2C_schip_langs_de_IJsselkade_foto5_2016-02-17_10.50.jpg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Kampen%2C_schip_langs_de_IJsselkade_foto5_2016-02-17_10.50.jpg/400px-Kampen%2C_schip_langs_de_IJsselkade_foto5_2016-02-17_10.50.jpg" alt="Schip langs de IJsselkade" loading="lazy">
+          <div class="gallery-zoom-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </div>
+        <div class="gallery-item reveal delay-3" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kampen%2C_de_Kalverhekkenbrug_en_de_Buitenkerk_foto2_2016-02-17_13.13.jpg/1200px-Kampen%2C_de_Kalverhekkenbrug_en_de_Buitenkerk_foto2_2016-02-17_13.13.jpg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kampen%2C_de_Kalverhekkenbrug_en_de_Buitenkerk_foto2_2016-02-17_13.13.jpg/400px-Kampen%2C_de_Kalverhekkenbrug_en_de_Buitenkerk_foto2_2016-02-17_13.13.jpg" alt="Kalverhekkenbrug en Buitenkerk" loading="lazy">
+          <div class="gallery-zoom-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </div>
+        <div class="gallery-item reveal delay-1" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kampen%2C_de_Stadsbrug_foto10_2016-02-17_10.35.jpg/1200px-Kampen%2C_de_Stadsbrug_foto10_2016-02-17_10.35.jpg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kampen%2C_de_Stadsbrug_foto10_2016-02-17_10.35.jpg/400px-Kampen%2C_de_Stadsbrug_foto10_2016-02-17_10.35.jpg" alt="De Stadsbrug" loading="lazy">
+          <div class="gallery-zoom-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </div>
+        <div class="gallery-item reveal delay-2" data-full="https://upload.wikimedia.org/wikipedia/commons/6/62/Bovenkerk_Kampen_toren.jpg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Bovenkerk_Kampen_toren.jpg" alt="Bovenkerk Kampen toren" loading="lazy">
+          <div class="gallery-zoom-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </div>
+        <div class="gallery-item reveal delay-3" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Kampen%2C_kantoorgebouw_ABN_Amrobank_aan_de_IJsselkade_foto7_2016-02-17_10.57.jpg/1200px-Kampen%2C_kantoorgebouw_ABN_Amrobank_aan_de_IJsselkade_foto7_2016-02-17_10.57.jpg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Kampen%2C_kantoorgebouw_ABN_Amrobank_aan_de_IJsselkade_foto7_2016-02-17_10.57.jpg/400px-Kampen%2C_kantoorgebouw_ABN_Amrobank_aan_de_IJsselkade_foto7_2016-02-17_10.57.jpg" alt="ABN Amro aan de IJsselkade" loading="lazy">
+          <div class="gallery-zoom-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&#10094;</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext">&#10095;</button>
+    <img src="" alt="Lightbox afbeelding" id="lightboxImg">
+  </div>
 
   <!-- ============================================================
        9. NIEUWS / RAADSPRAAT
@@ -567,26 +684,30 @@
       <div class="news-subsection reveal">
         <h3 class="news-section-title">Laatste Nieuws</h3>
         <div class="news-grid">
-          <div class="news-card featured-news">
+          <div class="news-card featured-news tilt-card">
+            <div class="tilt-shine"></div>
             <span class="news-featured-badge">Uitgelicht</span>
             <div class="news-date">21 februari 2026</div>
             <h3>Remco van Veen nieuwe kandidaat voor Hart voor Kampen!</h3>
             <p>Hart voor Kampen verwelkomt Remco van Veen als nieuwe kandidaat op de kieslijst. Met zijn betrokkenheid bij de lokale gemeenschap en frisse blik is hij een waardevolle aanvulling.</p>
           </div>
 
-          <div class="news-card">
+          <div class="news-card tilt-card">
+            <div class="tilt-shine"></div>
             <div class="news-date">6 februari 2026</div>
             <h3>Kandidatenlijsten vastgesteld: Hart voor Kampen lijst 8</h3>
             <p>De kandidatenlijsten voor de gemeenteraadsverkiezingen zijn officieel vastgesteld. Hart voor Kampen doet mee als lijst 8 met een sterk team.</p>
           </div>
 
-          <div class="news-card">
+          <div class="news-card tilt-card">
+            <div class="tilt-shine"></div>
             <div class="news-date">8 december 2025</div>
             <h3>Nardus Koster unaniem als lijsttrekker gekozen</h3>
             <p>Tijdens de ledenvergadering is Nardus Koster unaniem naar voren geschoven als lijsttrekker. De volledige kandidatenlijst met twaalf kandidaten is goedgekeurd.</p>
           </div>
 
-          <div class="news-card">
+          <div class="news-card tilt-card">
+            <div class="tilt-shine"></div>
             <div class="news-date">November 2025</div>
             <h3>Vragen over veiligheid stadsgracht</h3>
             <p>Fractievoorzitter Nardus Koster ontvangt meldingen over mogelijke risico's langs de Burgel en vraagt het college om een structurele veiligheidsinventarisatie.</p>
@@ -598,7 +719,8 @@
       <div class="news-subsection reveal">
         <h3 class="news-section-title">Raadspraat Columns</h3>
         <div class="news-grid">
-          <div class="news-card">
+          <div class="news-card tilt-card">
+            <div class="tilt-shine"></div>
             <div class="news-date">6 januari 2026</div>
             <h3>&ldquo;De beste wensen...&rdquo;</h3>
             <p>Terugblik op het afgelopen jaar en vooruitblik op de gemeenteraadsverkiezingen van 2026.</p>
@@ -607,7 +729,8 @@
             </div>
           </div>
 
-          <div class="news-card">
+          <div class="news-card tilt-card">
+            <div class="tilt-shine"></div>
             <div class="news-date">28 oktober 2025</div>
             <h3>&ldquo;Een sluitende begroting... maar hoe dan?&rdquo;</h3>
             <p>Kritische analyse van de gemeentebegroting en de keuzes die het college maakt.</p>
@@ -616,7 +739,8 @@
             </div>
           </div>
 
-          <div class="news-card">
+          <div class="news-card tilt-card">
+            <div class="tilt-shine"></div>
             <div class="news-date">20 augustus 2025</div>
             <h3>&ldquo;Langjarige visie (of juist het gebrek daaraan)...&rdquo;</h3>
             <p>Over de noodzaak van een duidelijke langetermijnvisie voor de gemeente Kampen.</p>
@@ -625,7 +749,8 @@
             </div>
           </div>
 
-          <div class="news-card">
+          <div class="news-card tilt-card">
+            <div class="tilt-shine"></div>
             <div class="news-date">10 juni 2025</div>
             <h3>&ldquo;Gemiste kans...&rdquo;</h3>
             <p>Reflectie op kansen die de gemeente heeft laten liggen en hoe het beter kan.</p>
@@ -634,7 +759,8 @@
             </div>
           </div>
 
-          <div class="news-card">
+          <div class="news-card tilt-card">
+            <div class="tilt-shine"></div>
             <div class="news-date">2 april 2025</div>
             <h3>&ldquo;SGP opent de deur voor betaald parkeren op zondag&rdquo;</h3>
             <p>Hart voor Kampen is tegen betaald parkeren op zondag. Een kritische blik op de SGP-voorstellen.</p>
@@ -643,7 +769,8 @@
             </div>
           </div>
 
-          <div class="news-card">
+          <div class="news-card tilt-card">
+            <div class="tilt-shine"></div>
             <div class="news-date">21 januari 2025</div>
             <h3>&ldquo;Een betrouwbare en consistente overheid...&rdquo;</h3>
             <p>Over het belang van betrouwbaarheid en consistentie in het gemeentelijk bestuur.</p>
@@ -660,7 +787,7 @@
        10. QUOTE SECTION (Parallax)
        ============================================================ -->
   <section class="quote-section">
-    <div class="quote-bg"></div>
+    <div class="quote-bg" data-parallax></div>
     <div class="quote-overlay"></div>
     <div class="quote-content reveal-scale">
       <div class="quote-mark">&ldquo;</div>
@@ -668,6 +795,130 @@
         Kampen is meer dan een plek op de kaart. Het is onze thuis, onze trots, ons hart. En daar zetten wij ons elke dag voor in.
       </blockquote>
       <div class="quote-author">&mdash; <span>Nardus Koster</span>, Fractievoorzitter Hart voor Kampen</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STEMWIJZER MINI-QUIZ
+       ============================================================ -->
+  <section id="stemwijzer" class="stemwijzer">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Stemwijzer</span>
+        <h2>Past Hart voor Kampen bij jou?</h2>
+        <p>Beantwoord 6 vragen en ontdek het!</p>
+      </div>
+
+      <div class="stemwijzer-inner reveal" id="stemwijzerQuiz">
+        <div class="stemwijzer-header">
+          <h3>Stemwijzer</h3>
+          <p>Ontdek in 6 vragen of Hart voor Kampen bij jou past</p>
+        </div>
+
+        <div class="stemwijzer-progress">
+          <div class="stemwijzer-progress-bar" id="quizProgressBar" style="width: 0%"></div>
+        </div>
+        <div class="stemwijzer-progress-text" id="quizProgressText">Vraag 1 van 6</div>
+
+        <div class="stemwijzer-body" id="quizBody">
+          <!-- Question 1 -->
+          <div class="stemwijzer-question active" data-question="0">
+            <span class="stemwijzer-question-category">Burgerparticipatie</span>
+            <h4>De gemeente moet inwoners actief betrekken bij beslissingen in hun wijk</h4>
+            <div class="stemwijzer-options">
+              <button class="stemwijzer-option" data-value="4">Helemaal mee eens</button>
+              <button class="stemwijzer-option" data-value="3">Mee eens</button>
+              <button class="stemwijzer-option" data-value="2">Neutraal</button>
+              <button class="stemwijzer-option" data-value="1">Mee oneens</button>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="stemwijzer-question" data-question="1">
+            <span class="stemwijzer-question-category">Wonen</span>
+            <h4>Betaalbare woningen voor starters en ouderen moeten prioriteit krijgen</h4>
+            <div class="stemwijzer-options">
+              <button class="stemwijzer-option" data-value="4">Helemaal mee eens</button>
+              <button class="stemwijzer-option" data-value="3">Mee eens</button>
+              <button class="stemwijzer-option" data-value="2">Neutraal</button>
+              <button class="stemwijzer-option" data-value="1">Mee oneens</button>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="stemwijzer-question" data-question="2">
+            <span class="stemwijzer-question-category">Financi&euml;n</span>
+            <h4>Dividenduitkeringen van ROVA moeten terugvloeien naar inwoners</h4>
+            <div class="stemwijzer-options">
+              <button class="stemwijzer-option" data-value="4">Helemaal mee eens</button>
+              <button class="stemwijzer-option" data-value="3">Mee eens</button>
+              <button class="stemwijzer-option" data-value="2">Neutraal</button>
+              <button class="stemwijzer-option" data-value="1">Mee oneens</button>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="stemwijzer-question" data-question="3">
+            <span class="stemwijzer-question-category">Groen</span>
+            <h4>Kampen moet investeren in meer groen en biodiversiteit</h4>
+            <div class="stemwijzer-options">
+              <button class="stemwijzer-option" data-value="4">Helemaal mee eens</button>
+              <button class="stemwijzer-option" data-value="3">Mee eens</button>
+              <button class="stemwijzer-option" data-value="2">Neutraal</button>
+              <button class="stemwijzer-option" data-value="1">Mee oneens</button>
+            </div>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="stemwijzer-question" data-question="4">
+            <span class="stemwijzer-question-category">Veiligheid</span>
+            <h4>Veiligheid en leefbaarheid in de wijken verdienen meer aandacht</h4>
+            <div class="stemwijzer-options">
+              <button class="stemwijzer-option" data-value="4">Helemaal mee eens</button>
+              <button class="stemwijzer-option" data-value="3">Mee eens</button>
+              <button class="stemwijzer-option" data-value="2">Neutraal</button>
+              <button class="stemwijzer-option" data-value="1">Mee oneens</button>
+            </div>
+          </div>
+
+          <!-- Question 6 -->
+          <div class="stemwijzer-question" data-question="5">
+            <span class="stemwijzer-question-category">Lokaal</span>
+            <h4>Een lokale partij kan beter opkomen voor Kampen dan een landelijke partij</h4>
+            <div class="stemwijzer-options">
+              <button class="stemwijzer-option" data-value="4">Helemaal mee eens</button>
+              <button class="stemwijzer-option" data-value="3">Mee eens</button>
+              <button class="stemwijzer-option" data-value="2">Neutraal</button>
+              <button class="stemwijzer-option" data-value="1">Mee oneens</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div class="stemwijzer-result" id="quizResult">
+          <div class="stemwijzer-result-emoji" id="quizResultEmoji"></div>
+          <h4 id="quizResultTitle"></h4>
+          <p id="quizResultText"></p>
+          <div id="quizResultAction"></div>
+
+          <div class="stemwijzer-share">
+            <a class="stemwijzer-share-btn twitter" id="shareTwitter" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Deel op X
+            </a>
+            <a class="stemwijzer-share-btn whatsapp" id="shareWhatsApp" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a class="stemwijzer-share-btn facebook" id="shareFacebook" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+          </div>
+
+          <button class="stemwijzer-restart" id="quizRestart">Opnieuw beginnen</button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -681,17 +932,20 @@
         <p class="cta-subtitle reveal">Lokale vertegenwoordiging, korte lijnen, transparantie en burgerparticipatie. Samen maken we Kampen mooier.</p>
 
         <div class="cta-cards">
-          <div class="cta-card reveal delay-1">
+          <div class="cta-card tilt-card reveal delay-1">
+            <div class="tilt-shine"></div>
             <div class="cta-card-icon">&#128188;</div>
             <h3>Word Lid</h3>
             <p>Sluit je aan bij een groeiende lokale beweging en draag bij aan de toekomst van Kampen.</p>
           </div>
-          <div class="cta-card reveal delay-2">
+          <div class="cta-card tilt-card reveal delay-2">
+            <div class="tilt-shine"></div>
             <div class="cta-card-icon">&#128150;</div>
             <h3>Word Donor</h3>
             <p>Steun onze campagne financieel. Als ANBI-stichting zijn giften aan Hart voor Kampen fiscaal aftrekbaar.</p>
           </div>
-          <div class="cta-card reveal delay-3">
+          <div class="cta-card tilt-card reveal delay-3">
+            <div class="tilt-shine"></div>
             <div class="cta-card-icon">&#127937;</div>
             <h3>Word Vrijwilliger</h3>
             <p>Help mee met flyeren, campagnevoeren en het verspreiden van onze boodschap in uw wijk.</p>
@@ -854,6 +1108,7 @@
             <li><a href="#over-ons">Over Ons</a></li>
             <li><a href="#team">Ons Team</a></li>
             <li><a href="#bereikt">Bereikt</a></li>
+            <li><a href="#stemwijzer">Stemwijzer</a></li>
             <li><a href="#nieuws">Nieuws</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -904,15 +1159,15 @@
   <script>
     // ---- Countdown Timer to March 18, 2026 ----
     (function() {
-      const electionDate = new Date('2026-03-18T07:30:00+01:00'); // Polling opens 7:30
-      const daysEl = document.getElementById('cd-days');
-      const hoursEl = document.getElementById('cd-hours');
-      const minutesEl = document.getElementById('cd-minutes');
-      const secondsEl = document.getElementById('cd-seconds');
+      var electionDate = new Date('2026-03-18T07:30:00+01:00');
+      var daysEl = document.getElementById('cd-days');
+      var hoursEl = document.getElementById('cd-hours');
+      var minutesEl = document.getElementById('cd-minutes');
+      var secondsEl = document.getElementById('cd-seconds');
 
       function updateCountdown() {
-        const now = new Date();
-        const diff = electionDate - now;
+        var now = new Date();
+        var diff = electionDate - now;
 
         if (diff <= 0) {
           daysEl.textContent = '0';
@@ -922,46 +1177,234 @@
           return;
         }
 
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
         daysEl.textContent = days;
         hoursEl.textContent = String(hours).padStart(2, '0');
         minutesEl.textContent = String(minutes).padStart(2, '0');
         secondsEl.textContent = String(seconds).padStart(2, '0');
+
+        // Auto confetti when under 7 days
+        if (days < 7 && !window._autoConfettiFired) {
+          window._autoConfettiFired = true;
+          setTimeout(function() { triggerConfetti(); }, 2000);
+        }
       }
 
       updateCountdown();
       setInterval(updateCountdown, 1000);
     })();
 
-    // ---- Hero Particles ----
+    // ---- Heart Particle Canvas System ----
     (function() {
-      const container = document.getElementById('heroParticles');
-      const particleCount = 30;
-      for (let i = 0; i < particleCount; i++) {
-        const p = document.createElement('div');
-        p.className = 'particle';
-        p.style.left = Math.random() * 100 + '%';
-        p.style.width = (Math.random() * 4 + 2) + 'px';
-        p.style.height = p.style.width;
-        p.style.animationDuration = (Math.random() * 12 + 8) + 's';
-        p.style.animationDelay = (Math.random() * 8) + 's';
-        p.style.opacity = Math.random() * 0.3 + 0.05;
-        container.appendChild(p);
+      var canvas = document.getElementById('heroParticleCanvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var particles = [];
+      var PARTICLE_COUNT = 80;
+      var animId;
+
+      function resize() {
+        var hero = document.getElementById('heroParticles');
+        canvas.width = hero.offsetWidth;
+        canvas.height = hero.offsetHeight;
       }
+
+      // Heart shape parametric function
+      function heartX(t) { return 16 * Math.pow(Math.sin(t), 3); }
+      function heartY(t) { return -(13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)); }
+
+      function createParticle(i) {
+        var t = (i / PARTICLE_COUNT) * Math.PI * 2;
+        var targetScale = 6;
+        var cx = canvas.width / 2;
+        var cy = canvas.height / 2 - 20;
+
+        return {
+          x: Math.random() * canvas.width,
+          y: canvas.height + Math.random() * 100,
+          targetX: cx + heartX(t) * targetScale,
+          targetY: cy + heartY(t) * targetScale,
+          size: Math.random() * 3 + 1.5,
+          speedY: -(Math.random() * 0.8 + 0.3),
+          drift: (Math.random() - 0.5) * 0.3,
+          opacity: Math.random() * 0.4 + 0.2,
+          hue: Math.random() > 0.5 ? 0 : 25, // red or orange
+          phase: Math.random() * Math.PI * 2,
+          progress: 0,
+          arriving: false
+        };
+      }
+
+      function init() {
+        resize();
+        particles = [];
+        for (var i = 0; i < PARTICLE_COUNT; i++) {
+          var p = createParticle(i);
+          p.y = Math.random() * canvas.height;
+          p.progress = Math.random();
+          particles.push(p);
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (var i = 0; i < particles.length; i++) {
+          var p = particles[i];
+
+          // Float upward
+          p.y += p.speedY;
+          p.x += p.drift + Math.sin(p.phase + Date.now() * 0.001) * 0.2;
+          p.phase += 0.01;
+
+          // When particle has risen above halfway, gradually attract to heart shape
+          var midY = canvas.height * 0.5;
+          if (p.y < midY) {
+            var attraction = Math.max(0, 1 - (p.y / midY));
+            attraction = attraction * attraction * 0.02;
+            p.x += (p.targetX - p.x) * attraction;
+            p.y += (p.targetY - p.y) * attraction;
+          }
+
+          // Reset when too far up
+          if (p.y < -20) {
+            var idx = particles.indexOf(p);
+            particles[idx] = createParticle(idx);
+          }
+
+          // Draw
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = 'hsla(' + p.hue + ', 90%, 60%, ' + p.opacity + ')';
+          ctx.fill();
+        }
+
+        animId = requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', function() {
+        resize();
+        // Recalc targets
+        for (var i = 0; i < particles.length; i++) {
+          var t = (i / PARTICLE_COUNT) * Math.PI * 2;
+          var targetScale = 6;
+          particles[i].targetX = canvas.width / 2 + heartX(t) * targetScale;
+          particles[i].targetY = canvas.height / 2 - 20 + heartY(t) * targetScale;
+        }
+      });
+
+      init();
+      animate();
+    })();
+
+    // ---- Cursor Glow Effect ----
+    (function() {
+      var glow = document.getElementById('cursorGlow');
+      var mx = -200, my = -200;
+      var glowX = -200, glowY = -200;
+
+      document.addEventListener('mousemove', function(e) {
+        mx = e.clientX;
+        my = e.clientY;
+      });
+
+      // Use rAF for smooth following
+      function updateGlow() {
+        glowX += (mx - glowX) * 0.15;
+        glowY += (my - glowY) * 0.15;
+        glow.style.left = glowX + 'px';
+        glow.style.top = glowY + 'px';
+        requestAnimationFrame(updateGlow);
+      }
+      updateGlow();
+
+      // Hide on touch devices
+      if ('ontouchstart' in window) {
+        glow.style.display = 'none';
+      }
+    })();
+
+    // ---- 3D Tilt Effect on Cards ----
+    (function() {
+      var cards = document.querySelectorAll('.tilt-card');
+      var MAX_TILT = 8;
+
+      cards.forEach(function(card) {
+        var shine = card.querySelector('.tilt-shine');
+        var rafId = null;
+        var currentX = 0, currentY = 0;
+        var targetX = 0, targetY = 0;
+
+        card.addEventListener('mousemove', function(e) {
+          var rect = card.getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          var centerX = rect.width / 2;
+          var centerY = rect.height / 2;
+
+          targetX = ((y - centerY) / centerY) * -MAX_TILT;
+          targetY = ((x - centerX) / centerX) * MAX_TILT;
+
+          if (shine) {
+            var percentX = (x / rect.width) * 100;
+            var percentY = (y / rect.height) * 100;
+            shine.style.background = 'radial-gradient(circle at ' + percentX + '% ' + percentY + '%, rgba(255,255,255,0.15) 0%, transparent 80%)';
+          }
+
+          if (!rafId) {
+            rafId = requestAnimationFrame(function animateTilt() {
+              currentX += (targetX - currentX) * 0.1;
+              currentY += (targetY - currentY) * 0.1;
+              card.style.transform = 'perspective(800px) rotateX(' + currentX + 'deg) rotateY(' + currentY + 'deg)';
+
+              if (Math.abs(targetX - currentX) > 0.1 || Math.abs(targetY - currentY) > 0.1) {
+                rafId = requestAnimationFrame(animateTilt);
+              } else {
+                rafId = null;
+              }
+            });
+          }
+        });
+
+        card.addEventListener('mouseleave', function() {
+          targetX = 0;
+          targetY = 0;
+          if (!rafId) {
+            rafId = requestAnimationFrame(function resetTilt() {
+              currentX += (0 - currentX) * 0.1;
+              currentY += (0 - currentY) * 0.1;
+              card.style.transform = 'perspective(800px) rotateX(' + currentX + 'deg) rotateY(' + currentY + 'deg)';
+
+              if (Math.abs(currentX) > 0.1 || Math.abs(currentY) > 0.1) {
+                rafId = requestAnimationFrame(resetTilt);
+              } else {
+                card.style.transform = '';
+                rafId = null;
+              }
+            });
+          }
+          if (shine) shine.style.opacity = '0';
+        });
+
+        card.addEventListener('mouseenter', function() {
+          if (shine) shine.style.opacity = '1';
+        });
+      });
     })();
 
     // ---- Navbar Scroll Effect ----
     (function() {
-      const navbar = document.getElementById('navbar');
-      const floatingCta = document.getElementById('floatingCta');
-      let lastScroll = 0;
+      var navbar = document.getElementById('navbar');
+      var floatingCta = document.getElementById('floatingCta');
+      var socialSidebar = document.getElementById('socialSidebar');
+      var heroHeight = 0;
 
-      window.addEventListener('scroll', function() {
-        const scrollY = window.scrollY;
+      function onScroll() {
+        var scrollY = window.scrollY;
         navbar.classList.toggle('scrolled', scrollY > 60);
 
         // Show floating CTA after hero
@@ -971,15 +1414,34 @@
           floatingCta.classList.remove('show');
         }
 
-        lastScroll = scrollY;
+        // Show social sidebar after hero
+        if (socialSidebar) {
+          if (scrollY > window.innerHeight * 0.9) {
+            socialSidebar.classList.add('visible');
+          } else {
+            socialSidebar.classList.remove('visible');
+          }
+        }
+      }
+
+      // Throttle scroll
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            onScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
       }, { passive: true });
     })();
 
     // ---- Mobile Menu ----
     (function() {
-      const hamburger = document.getElementById('hamburger');
-      const navLinks = document.getElementById('navLinks');
-      const overlay = document.getElementById('mobileOverlay');
+      var hamburger = document.getElementById('hamburger');
+      var navLinks = document.getElementById('navLinks');
+      var overlay = document.getElementById('mobileOverlay');
 
       function closeMenu() {
         hamburger.classList.remove('active');
@@ -1005,7 +1467,6 @@
 
       overlay.addEventListener('click', closeMenu);
 
-      // Close menu on link click
       navLinks.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', closeMenu);
       });
@@ -1014,9 +1475,9 @@
     // ---- Smooth Scroll for all anchors ----
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
+        var targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        const target = document.querySelector(targetId);
+        var target = document.querySelector(targetId);
         if (target) {
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1026,8 +1487,8 @@
 
     // ---- Scroll Reveal (IntersectionObserver) ----
     (function() {
-      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-      const observer = new IntersectionObserver(function(entries) {
+      var revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+      var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
@@ -1043,20 +1504,99 @@
       });
     })();
 
+    // ---- Section Header Underline Animation ----
+    (function() {
+      var headers = document.querySelectorAll('.section-header');
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.3 });
+
+      headers.forEach(function(h) { observer.observe(h); });
+    })();
+
+    // ---- Animated Counters ----
+    (function() {
+      var counters = document.querySelectorAll('[data-count-to]');
+      var observed = new Set();
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !observed.has(entry.target)) {
+            observed.add(entry.target);
+            animateCounter(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(function(el) { observer.observe(el); });
+
+      function animateCounter(el) {
+        var target = parseInt(el.getAttribute('data-count-to'));
+        var from = parseInt(el.getAttribute('data-count-from') || '0');
+        var suffix = el.getAttribute('data-count-suffix') || '';
+        var duration = 2000;
+        var startTime = null;
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          // Ease out cubic
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.floor(from + (target - from) * eased);
+          el.textContent = current + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = target + suffix;
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+    })();
+
+    // ---- Parallax on scroll for photos/backgrounds ----
+    (function() {
+      var parallaxElements = document.querySelectorAll('[data-parallax]');
+
+      function updateParallax() {
+        var scrollY = window.scrollY;
+        parallaxElements.forEach(function(el) {
+          var rect = el.parentElement.getBoundingClientRect();
+          var offset = rect.top * 0.3;
+          el.style.transform = 'translateY(' + offset + 'px)';
+        });
+      }
+
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            updateParallax();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+
     // ---- Program Tabs ----
     (function() {
-      const tabs = document.querySelectorAll('.program-tab');
-      const panels = document.querySelectorAll('.program-panel');
+      var tabs = document.querySelectorAll('.program-tab');
+      var panels = document.querySelectorAll('.program-panel');
 
       tabs.forEach(function(tab) {
         tab.addEventListener('click', function() {
-          const target = this.getAttribute('data-tab');
+          var target = this.getAttribute('data-tab');
 
-          // Remove active from all
           tabs.forEach(function(t) { t.classList.remove('active'); });
           panels.forEach(function(p) { p.classList.remove('active'); });
 
-          // Add active to clicked
           this.classList.add('active');
           document.getElementById('tab-' + target).classList.add('active');
         });
@@ -1065,15 +1605,15 @@
 
     // ---- Active Nav Link ----
     (function() {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-links li a[href^="#"]');
+      var sections = document.querySelectorAll('section[id]');
+      var navLinks = document.querySelectorAll('.nav-links li a[href^="#"]');
 
       function updateActiveLink() {
-        const scrollY = window.scrollY + 120;
+        var scrollY = window.scrollY + 120;
         sections.forEach(function(section) {
-          const top = section.offsetTop;
-          const height = section.offsetHeight;
-          const id = section.getAttribute('id');
+          var top = section.offsetTop;
+          var height = section.offsetHeight;
+          var id = section.getAttribute('id');
 
           if (scrollY >= top && scrollY < top + height) {
             navLinks.forEach(function(link) {
@@ -1092,8 +1632,8 @@
     // ---- Contact Form Handler ----
     function handleSubmit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('.submit-btn');
-      const originalText = btn.textContent;
+      var btn = e.target.querySelector('.submit-btn');
+      var originalText = btn.textContent;
       btn.textContent = 'Verzonden!';
       btn.style.background = '#4caf50';
 
@@ -1103,6 +1643,274 @@
         e.target.reset();
       }, 3000);
     }
+
+    // ---- Dark Mode Toggle ----
+    (function() {
+      var toggle = document.getElementById('darkModeToggle');
+      var body = document.body;
+      var wavePath = document.querySelector('.wave-divider svg path');
+
+      // Load preference
+      var saved = localStorage.getItem('hvk-dark-mode');
+      if (saved === 'true') {
+        body.classList.add('dark-mode');
+      }
+
+      toggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        var isDark = body.classList.contains('dark-mode');
+        localStorage.setItem('hvk-dark-mode', isDark);
+
+        // Update wave divider fill
+        if (wavePath) {
+          wavePath.setAttribute('fill', isDark ? '#121212' : '#ffffff');
+        }
+      });
+    })();
+
+    // ---- Photo Gallery Lightbox ----
+    (function() {
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImg = document.getElementById('lightboxImg');
+      var closeBtn = document.getElementById('lightboxClose');
+      var prevBtn = document.getElementById('lightboxPrev');
+      var nextBtn = document.getElementById('lightboxNext');
+      var galleryItems = document.querySelectorAll('.gallery-item');
+      var currentIndex = 0;
+      var fullUrls = [];
+
+      galleryItems.forEach(function(item, idx) {
+        fullUrls.push(item.getAttribute('data-full'));
+        item.addEventListener('click', function() {
+          currentIndex = idx;
+          openLightbox();
+        });
+      });
+
+      function openLightbox() {
+        lightboxImg.src = fullUrls[currentIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        setTimeout(function() { lightboxImg.src = ''; }, 400);
+      }
+
+      closeBtn.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      prevBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + fullUrls.length) % fullUrls.length;
+        lightboxImg.src = fullUrls[currentIndex];
+      });
+
+      nextBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % fullUrls.length;
+        lightboxImg.src = fullUrls[currentIndex];
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + fullUrls.length) % fullUrls.length; lightboxImg.src = fullUrls[currentIndex]; }
+        if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % fullUrls.length; lightboxImg.src = fullUrls[currentIndex]; }
+      });
+    })();
+
+    // ---- Confetti System ----
+    var confettiCanvas, confettiCtx, confettiParticles = [];
+
+    function initConfettiCanvas() {
+      confettiCanvas = document.getElementById('confettiCanvas');
+      confettiCtx = confettiCanvas.getContext('2d');
+      confettiCanvas.width = window.innerWidth;
+      confettiCanvas.height = window.innerHeight;
+    }
+
+    function triggerConfetti() {
+      initConfettiCanvas();
+      confettiParticles = [];
+      var colors = ['#b71c1c', '#ff6f00', '#ffc107', '#ff9100', '#d32f2f', '#ffb74d'];
+
+      for (var i = 0; i < 120; i++) {
+        confettiParticles.push({
+          x: Math.random() * confettiCanvas.width,
+          y: Math.random() * -confettiCanvas.height * 0.5,
+          w: Math.random() * 10 + 5,
+          h: Math.random() * 6 + 3,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          vx: (Math.random() - 0.5) * 4,
+          vy: Math.random() * 3 + 2,
+          rotation: Math.random() * 360,
+          rotSpeed: (Math.random() - 0.5) * 10,
+          opacity: 1
+        });
+      }
+
+      animateConfetti();
+    }
+
+    function animateConfetti() {
+      confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      var alive = false;
+
+      for (var i = 0; i < confettiParticles.length; i++) {
+        var p = confettiParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.05; // gravity
+        p.rotation += p.rotSpeed;
+
+        if (p.y > confettiCanvas.height) {
+          p.opacity -= 0.02;
+        }
+
+        if (p.opacity > 0) {
+          alive = true;
+          confettiCtx.save();
+          confettiCtx.translate(p.x, p.y);
+          confettiCtx.rotate(p.rotation * Math.PI / 180);
+          confettiCtx.globalAlpha = Math.max(0, p.opacity);
+          confettiCtx.fillStyle = p.color;
+          confettiCtx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+          confettiCtx.restore();
+        }
+      }
+
+      if (alive) {
+        requestAnimationFrame(animateConfetti);
+      } else {
+        confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      }
+    }
+
+    // Confetti trigger button
+    document.getElementById('confettiBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      triggerConfetti();
+    });
+
+    window.addEventListener('resize', function() {
+      if (confettiCanvas) {
+        confettiCanvas.width = window.innerWidth;
+        confettiCanvas.height = window.innerHeight;
+      }
+    });
+
+    // ---- Stemwijzer Quiz ----
+    (function() {
+      var currentQuestion = 0;
+      var scores = [];
+      var totalQuestions = 6;
+      var progressBar = document.getElementById('quizProgressBar');
+      var progressText = document.getElementById('quizProgressText');
+      var quizBody = document.getElementById('quizBody');
+      var quizResult = document.getElementById('quizResult');
+      var questions = document.querySelectorAll('.stemwijzer-question');
+
+      // Option click handlers
+      var allOptions = document.querySelectorAll('.stemwijzer-option');
+      allOptions.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var value = parseInt(this.getAttribute('data-value'));
+          var questionEl = this.closest('.stemwijzer-question');
+
+          // Highlight selected
+          questionEl.querySelectorAll('.stemwijzer-option').forEach(function(b) { b.classList.remove('selected'); });
+          this.classList.add('selected');
+
+          // Record score
+          scores[currentQuestion] = value;
+
+          // Delay for visual feedback then advance
+          setTimeout(function() {
+            currentQuestion++;
+
+            if (currentQuestion >= totalQuestions) {
+              showResult();
+            } else {
+              // Slide transition
+              questionEl.classList.remove('active');
+              questionEl.classList.add('exit-left');
+
+              var nextQ = questions[currentQuestion];
+              nextQ.classList.add('active');
+
+              // Update progress
+              progressBar.style.width = ((currentQuestion) / totalQuestions * 100) + '%';
+              progressText.textContent = 'Vraag ' + (currentQuestion + 1) + ' van ' + totalQuestions;
+            }
+          }, 300);
+        });
+      });
+
+      function showResult() {
+        progressBar.style.width = '100%';
+        progressText.textContent = 'Resultaat';
+        quizBody.style.display = 'none';
+        quizResult.classList.add('active');
+
+        var totalScore = scores.reduce(function(a, b) { return a + b; }, 0);
+
+        var emoji = document.getElementById('quizResultEmoji');
+        var title = document.getElementById('quizResultTitle');
+        var text = document.getElementById('quizResultText');
+        var action = document.getElementById('quizResultAction');
+        var shareText = '';
+
+        if (totalScore >= 18) {
+          emoji.textContent = '\uD83C\uDF89'; // party popper
+          title.textContent = 'Hart voor Kampen past perfect bij jou!';
+          text.textContent = 'Jouw idee\u00ebn sluiten naadloos aan bij onze visie voor Kampen. Samen maken we onze gemeente sterker!';
+          action.innerHTML = '<a href="#doe-mee" class="btn btn-primary" style="margin:8px;">Stem Lijst 8 op 18 maart!</a>';
+          shareText = 'Hart voor Kampen past perfect bij mij! Doe de stemwijzer en ontdek of het ook bij jou past.';
+        } else if (totalScore >= 12) {
+          emoji.textContent = '\uD83D\uDC4D'; // thumbs up
+          title.textContent = 'Je deelt veel standpunten met Hart voor Kampen!';
+          text.textContent = 'Bekijk ons programma om meer te ontdekken over onze plannen voor Kampen.';
+          action.innerHTML = '<a href="#programma" class="btn btn-primary" style="margin:8px;">Bekijk Ons Programma</a>';
+          shareText = 'Ik deel veel standpunten met Hart voor Kampen! Doe zelf de stemwijzer.';
+        } else {
+          emoji.textContent = '\uD83D\uDE4F'; // folded hands
+          title.textContent = 'Bedankt voor je deelname!';
+          text.textContent = 'Bekijk ons volledige programma \u2014 misschien verrassen we je nog.';
+          action.innerHTML = '<a href="#programma" class="btn btn-outline-dark" style="margin:8px;">Bekijk Ons Programma</a>';
+          shareText = 'Ik deed de stemwijzer van Hart voor Kampen. Doe jij hem ook?';
+        }
+
+        // Set share links
+        var url = encodeURIComponent(window.location.href);
+        var shareEncoded = encodeURIComponent(shareText);
+        document.getElementById('shareTwitter').href = 'https://twitter.com/intent/tweet?text=' + shareEncoded + '&url=' + url;
+        document.getElementById('shareWhatsApp').href = 'https://wa.me/?text=' + shareEncoded + '%20' + url;
+        document.getElementById('shareFacebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + url + '&quote=' + shareEncoded;
+      }
+
+      // Restart
+      document.getElementById('quizRestart').addEventListener('click', function() {
+        currentQuestion = 0;
+        scores = [];
+        quizBody.style.display = '';
+        quizResult.classList.remove('active');
+        progressBar.style.width = '0%';
+        progressText.textContent = 'Vraag 1 van 6';
+
+        questions.forEach(function(q) {
+          q.classList.remove('active', 'exit-left');
+          q.querySelectorAll('.stemwijzer-option').forEach(function(b) { b.classList.remove('selected'); });
+        });
+        questions[0].classList.add('active');
+      });
+    })();
   </script>
 
 </body>
