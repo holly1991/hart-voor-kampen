@@ -1098,7 +1098,8 @@ section {
 .team-photo-wrap {
   position: relative;
   overflow: hidden;
-  height: 420px;
+  aspect-ratio: 2/3;
+  background: var(--warm-gray);
 }
 
 .team-photo-wrap img {
@@ -1107,10 +1108,6 @@ section {
   object-fit: cover;
   object-position: center top;
   transition: transform var(--transition-slow);
-}
-
-.team-card.featured .team-photo-wrap img {
-  object-position: center 20%;
 }
 
 .team-card:hover .team-photo-wrap img {
