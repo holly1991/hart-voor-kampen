@@ -1,524 +1,1109 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hart voor Kampen - Lokale vertegenwoordiging, korte lijnen, daadkrachtig bestuur</title>
-    <link rel="icon" type="image/jpeg" href="hvFoWrmd_400x400.jpg">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hart voor Kampen - Lijst 8 | Gemeenteraadsverkiezingen 18 maart 2026</title>
+  <meta name="description" content="Hart voor Kampen: lokale vertegenwoordiging, korte lijnen, daadkrachtig bestuur. Stem Lijst 8 op 18 maart 2026. Voor Kampen, IJsselmuiden en alle kernen.">
+  <meta name="keywords" content="Hart voor Kampen, gemeenteraad, verkiezingen, Kampen, Lijst 8, lokale politiek">
+  <link rel="icon" type="image/jpeg" href="hvFoWrmd_400x400.jpg">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hart voor Kampen - Stem Lijst 8">
+  <meta property="og:description" content="Lokale vertegenwoordiging, korte lijnen, daadkrachtig bestuur. Gemeenteraadsverkiezingen 18 maart 2026.">
+  <meta property="og:image" content="hvFoWrmd_400x400.jpg">
+  <meta property="og:type" content="website">
 </head>
 <body>
 
-    <!-- Navigatie -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <img src="hvFoWrmd_400x400.jpg" alt="Hart voor Kampen" class="logo-img"> Hart voor <span class="logo-accent">Kampen</span>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- ============================================================
+       1. NAVBAR
+       ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#home" class="nav-brand">
+        <img src="hvFoWrmd_400x400.jpg" alt="Hart voor Kampen Logo">
+        <span class="nav-brand-text">Hart voor <span class="accent">Kampen</span></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#programma">Programma</a></li>
+        <li><a href="#over-ons">Over Ons</a></li>
+        <li><a href="#team">Ons Team</a></li>
+        <li><a href="#bereikt">Bereikt</a></li>
+        <li><a href="#nieuws">Nieuws</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-cta-mobile"><a href="#doe-mee" class="nav-cta">Stem Lijst 8</a></li>
+      </ul>
+
+      <a href="#doe-mee" class="nav-cta nav-cta-desktop">Stem Lijst 8</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       2. HERO
+       ============================================================ -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-particles" id="heroParticles"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        Gemeenteraadsverkiezingen 18 maart 2026 &mdash; Lijst 8
+      </div>
+
+      <h1>Lokale vertegenwoordiging, korte lijnen, <span class="accent">daadkrachtig</span> bestuur</h1>
+
+      <p class="hero-subtitle">Hart voor Kampen maakt van Kampen de beste plek om te wonen, ondernemen en recre&euml;ren. Met transparantie, burgerparticipatie en meer dan 100 jaar politieke ervaring.</p>
+
+      <div class="hero-buttons">
+        <a href="#programma" class="btn btn-primary">Ons Programma</a>
+        <a href="#doe-mee" class="btn btn-outline">Sluit Je Aan</a>
+      </div>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-days">--</span>
+          <span class="countdown-label">Dagen</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-hours">--</span>
+          <span class="countdown-label">Uren</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-minutes">--</span>
+          <span class="countdown-label">Minuten</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-seconds">--</span>
+          <span class="countdown-label">Seconden</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. CORE VALUES
+       ============================================================ -->
+  <section class="values" id="waarden">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Onze Kernwaarden</span>
+        <h2>Waar wij voor staan</h2>
+        <p>Vier pijlers die alles wat wij doen richting geven</p>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card reveal delay-1">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Burgerparticipatie</h3>
+          <p>Inwoners betrekken bij alles wat in hun leefomgeving gebeurt. Uw stem telt, niet alleen op verkiezingsdag.</p>
+        </div>
+
+        <div class="value-card reveal delay-2">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Transparantie</h3>
+          <p>Wij zijn voor volstrekte openbaarheid van bestuur. Geen achterkamertjespolitiek, maar open en eerlijk.</p>
+        </div>
+
+        <div class="value-card reveal delay-3">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Daadkracht</h3>
+          <p>Korte lijnen en slagvaardig bestuur voor snelle resultaten. Niet praten, maar doen.</p>
+        </div>
+
+        <div class="value-card reveal delay-4">
+          <div class="value-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Lokaal Eerst</h3>
+          <p>Niet gebonden aan landelijke partijlijnen &mdash; puur voor Kampen en al haar kernen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. REMCO VAN VEEN ANNOUNCEMENT
+       ============================================================ -->
+  <section class="remco-banner">
+    <div class="container">
+      <div class="remco-inner">
+        <div class="remco-photo-wrap reveal-left">
+          <img src="remco.jpg" alt="Remco van Veen" class="remco-photo">
+        </div>
+        <div class="remco-text reveal-right">
+          <span class="new-badge">Nieuw op de lijst!</span>
+          <h2>Remco van Veen versterkt Hart voor Kampen</h2>
+          <p>Wij zijn trots om Remco van Veen te verwelkomen als nieuwe kandidaat op onze lijst voor de gemeenteraadsverkiezingen van 18 maart 2026. Remco is een betrokken Kampenaar die met zijn kennis, ervaring en frisse energie een waardevolle aanvulling vormt voor ons team.</p>
+          <p>Met een sterk netwerk en diepe betrokkenheid bij de lokale gemeenschap zet Remco zich in voor de belangen van alle inwoners van onze mooie gemeente.</p>
+          <a href="https://www.linkedin.com/in/remco-van-veen-91a676131/" target="_blank" rel="noopener" class="linkedin-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            Bekijk LinkedIn Profiel
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. PARTY PROGRAM (Tabs)
+       ============================================================ -->
+  <section id="programma" class="program">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Verkiezingsprogramma</span>
+        <h2>Ons Programma 2026 &ndash; 2030</h2>
+        <p>Waar wij voor staan &mdash; voor alle wijken en kernen in de gemeente Kampen</p>
+      </div>
+
+      <div class="program-tabs-wrapper reveal">
+        <div class="program-tabs" id="programTabs">
+          <button class="program-tab active" data-tab="wonen">Wonen</button>
+          <button class="program-tab" data-tab="veiligheid">Veiligheid</button>
+          <button class="program-tab" data-tab="ouderen">Ouderen &amp; Zorg</button>
+          <button class="program-tab" data-tab="groen">Biodiversiteit</button>
+          <button class="program-tab" data-tab="financien">Financi&euml;n</button>
+          <button class="program-tab" data-tab="ondernemen">Ondernemen</button>
+          <button class="program-tab" data-tab="parkeren">Parkeren</button>
+          <button class="program-tab" data-tab="kampereiland">Kampereiland</button>
+          <button class="program-tab" data-tab="energie">Energie</button>
+          <button class="program-tab" data-tab="onderwijs">Onderwijs</button>
+          <button class="program-tab" data-tab="cultuur">Cultuur</button>
+          <button class="program-tab" data-tab="inclusiviteit">Inclusiviteit</button>
+        </div>
+
+        <!-- Tab Panels -->
+        <div class="program-panel active" id="tab-wonen">
+          <h3><span class="panel-icon">&#127968;</span> Wonen &amp; Doorstroming</h3>
+          <ul class="program-list">
+            <li>Inbreiding binnen bestaand bebouwd gebied gaat voor uitbreiding aan de rand</li>
+            <li>Maximaal gebruik maken van wettelijke mogelijkheden voor doorstroming</li>
+            <li>(Middel)dure woningen voor doorstromers, goedkopere woningen voor starters</li>
+            <li>Bouwen in Kampen, IJsselmuiden en alle kernen</li>
+            <li>Aandacht voor extreme weersomstandigheden in ruimtelijke plannen</li>
+          </ul>
+        </div>
+
+        <div class="program-panel" id="tab-veiligheid">
+          <h3><span class="panel-icon">&#128737;</span> Veiligheid &amp; Leefbaarheid</h3>
+          <ul class="program-list">
+            <li>Wijken ontwerpen volgens het Politiekeurmerk Veilig Wonen</li>
+            <li>Structurele veiligheidsinventarisaties in alle wijken</li>
+            <li>Aanpak woonoverlast met daadkrachtig optreden</li>
+            <li>BOA-inzet en goede straatverlichting in alle buurten</li>
+            <li>Camera-toezicht op risicolocaties zoals Station Kampen Zuid</li>
+          </ul>
+        </div>
+
+        <div class="program-panel" id="tab-ouderen">
+          <h3><span class="panel-icon">&#10084;&#65039;</span> Ouderen &amp; Zorg</h3>
+          <ul class="program-list">
+            <li>Ouderen verdienen veilige, prettige woningen om zelfstandig te blijven wonen</li>
+            <li>Woningaanpassingen via WMO beschikbaar en laagdrempelig</li>
+            <li>Mantelzorgers beter ondersteunen en ontlasten</li>
+            <li>Wijkteams en korte lijnen in de zorg behouden en versterken</li>
+            <li>Jeugdzorg: aandacht voor preventie en goede nazorg</li>
+          </ul>
+        </div>
+
+        <div class="program-panel" id="tab-groen">
+          <h3><span class="panel-icon">&#127795;</span> Biodiversiteit &amp; Groen</h3>
+          <ul class="program-list">
+            <li>Meer groen en biodiversiteit in de stad en dorpen</li>
+            <li>Vergroening van wijken actief stimuleren</li>
+            <li>Bloemen voor Bijen project uitbreiden over de hele gemeente</li>
+            <li>Respect voor het landschap en de IJssel</li>
+            <li>Eigen beheerder voor Kampereiland handhaven</li>
+          </ul>
+        </div>
+
+        <div class="program-panel" id="tab-financien">
+          <h3><span class="panel-icon">&#128176;</span> Financi&euml;n &amp; Bestuur</h3>
+          <ul class="program-list">
+            <li>ROVA-dividend terug naar de burger via verlaging afvalstoffenheffing</li>
+            <li>Minimaal externe inhuur van bestuurscapaciteit</li>
+            <li>Begroting die iedereen kan begrijpen</li>
+            <li>Samenwerking met buurgemeenten waar het kwaliteit verbetert</li>
+            <li>Kritisch op het Kamper Ontwikkelfonds (&euro;20 miljoen dat niet van de grond kwam)</li>
+          </ul>
+        </div>
+
+        <div class="program-panel" id="tab-ondernemen">
+          <h3><span class="panel-icon">&#127978;</span> Ondernemen &amp; Centrum</h3>
+          <ul class="program-list">
+            <li>Steun voor lokale winkeliers en horeca in de binnenstad</li>
+            <li>Detailhandel toestaan in zowel binnenstad als bedrijventerreinen</li>
+            <li>Kampen als gastvrije Hanzestad voor toerisme uitdragen</li>
+            <li>Meer aanlegsteigers voor recreatieve vaart op de IJssel</li>
+            <li>Toeristenbelasting volledig inzetten voor verbetering toerisme</li>
+          </ul>
+        </div>
+
+        <div class="program-panel" id="tab-parkeren">
+          <h3><span class="panel-icon">&#128663;</span> Parkeren</h3>
+          <ul class="program-list">
+            <li>Betaalbaar parkeren is een dienst aan de burger</li>
+            <li>Tekort van 200 parkeerplaatsen in binnenstad aanpakken (Mobycon-rapport)</li>
+            <li>Bij autoluw maken binnenstad: meer parkeren aan de randen cre&euml;ren</li>
+            <li>Tegen betaald parkeren op zondag</li>
+            <li>Evenementenvergunningen loskoppelen van parkeerkosten</li>
+          </ul>
+        </div>
+
+        <div class="program-panel" id="tab-kampereiland">
+          <h3><span class="panel-icon">&#127966;</span> Kampereiland &amp; Pacht</h3>
+          <ul class="program-list">
+            <li>Andere beheersaanpak voor Kampereiland met meer lokale inbreng</li>
+            <li>Tegen erfpachtconstructie &mdash; &ldquo;het kan niet, het werkt niet&rdquo;</li>
+            <li>Voorstel: fonds onder Kampereiland NV met jaarlijkse storting</li>
+            <li>Steun aan boeren via kortlopende leningen</li>
+            <li>Woningbouw op Kampereiland voor ouderen en starters</li>
+          </ul>
+        </div>
+
+        <div class="program-panel" id="tab-energie">
+          <h3><span class="panel-icon">&#9889;</span> Energie &amp; Duurzaamheid</h3>
+          <ul class="program-list">
+            <li>Tegen nieuwe vergunningen voor biomassacentrales</li>
+            <li>Steun voor zonne-energie en windenergie waar passend</li>
+            <li>Gemeente moet faciliteiten bieden voor duurzame energieplannen van inwoners</li>
+            <li>Herbruikbare, recyclebare materialen stimuleren bij bouw en evenementen</li>
+          </ul>
+        </div>
+
+        <div class="program-panel" id="tab-onderwijs">
+          <h3><span class="panel-icon">&#127891;</span> Onderwijs</h3>
+          <ul class="program-list">
+            <li>Elk kind heeft recht op goed onderwijs, ongeacht achtergrond</li>
+            <li>Divers aanbod basisonderwijs behouden in de hele gemeente</li>
+            <li>Verkeersveiligheid rondom scholen als hoge prioriteit</li>
+          </ul>
+        </div>
+
+        <div class="program-panel" id="tab-cultuur">
+          <h3><span class="panel-icon">&#127917;</span> Cultuur &amp; Evenementen</h3>
+          <ul class="program-list">
+            <li>Culturele subsidies in verhouding tot daadwerkelijke participatie</li>
+            <li>Gemeente moet samenwerken met organisatoren, niet tegenwerken</li>
+            <li>Steun voor &ldquo;Kerst in Oud Kampen&rdquo; en vergelijkbare evenementen</li>
+            <li>IJsselkogge als toeristische trekker &mdash; Maritiem Kenniscentrum realiseren</li>
+          </ul>
+        </div>
+
+        <div class="program-panel" id="tab-inclusiviteit">
+          <h3><span class="panel-icon">&#129309;</span> Inclusiviteit &amp; Participatie</h3>
+          <ul class="program-list">
+            <li>Toegankelijkheid voor mensen met een beperking in alle openbare ruimtes</li>
+            <li>Duidelijke definitie wanneer en hoe burgers worden betrokken bij besluitvorming</li>
+            <li>Direct betrokken wijken krijgen prioriteit bij inspraakprocedures</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. OVER ONS
+       ============================================================ -->
+  <section id="over-ons" class="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Wie wij zijn</span>
+        <h2>Over Hart voor Kampen</h2>
+        <p>Onafhankelijk, ervaren en puur lokaal sinds 2018</p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-text reveal-left">
+          <h3>Ontstaan uit overtuiging</h3>
+          <p>Hart voor Kampen is opgericht in 2018 toen prominente leden van Gemeente Belang Kampen (GBK) &mdash; waaronder Nardus Koster, Albert Holtland, Piet Bergstra, Henk Prinsen en Bruno Karel &mdash; besloten een eigen koers te varen.</p>
+          <p>Zij vormden het hart van de oorspronkelijke partij en brachten samen meer dan 100 jaar politieke ervaring mee. Die ervaring zetten we elke dag in voor de inwoners van onze gemeente.</p>
+
+          <div class="about-highlight">
+            Wij zijn niet gebonden aan landelijke partijlijnen. Wij kijken puur naar wat goed is voor Kampen, IJsselmuiden, Grafhorst, 's Heerenbroek, Kamperveen, Wilsum en Zalk.
+          </div>
+
+          <p>Sinds 7 maart 2022 heeft Hart voor Kampen de ANBI-status, waarmee giften aan onze partij fiscaal aftrekbaar zijn. Bij de verkiezingen van 2022 behaalden wij 2 zetels in de gemeenteraad.</p>
+
+          <div class="about-social">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b71c1c" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <span>@hartvoorkampen</span>
+            <span class="about-social-stats">172 posts &middot; 87 volgers</span>
+          </div>
+        </div>
+
+        <div class="about-stats reveal-right">
+          <div class="stat-card">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Jaar ervaring</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Lijstnummer</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Zetels in 2022</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2018</div>
+            <div class="stat-label">Opgericht</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. ONS TEAM
+       ============================================================ -->
+  <section id="team" class="team">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Ons Team</span>
+        <h2>De mensen achter Hart voor Kampen</h2>
+        <p>Ervaren en betrokken mensen die zich elke dag inzetten voor u</p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Nardus Koster -->
+        <div class="team-card reveal delay-1">
+          <div class="team-photo-wrap">
+            <img src="nardus.jpg" alt="Nardus Koster">
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-info">
+            <span class="team-role">Lijsttrekker &amp; Fractievoorzitter</span>
+            <h3>Nardus Koster</h3>
+            <p>Ondernemer, 62 jaar, woont in de binnenstad van Kampen. Heeft een winkel op de Oudestraat. Actief in de lokale politiek sinds 2005. Focus: bereikbaarheid, veiligheid en leefbaarheid in de wijken.</p>
+            <div class="team-contact">
+              <a href="tel:0611086171">06-11 08 61 71</a>
+              <a href="mailto:nardus@hartvoorkampen.nl">nardus@hartvoorkampen.nl</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Albert Holtland -->
+        <div class="team-card reveal delay-2">
+          <div class="team-photo-wrap">
+            <img src="albert.jpg" alt="Albert Holtland">
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-info">
+            <span class="team-role">Commissielid &amp; Oud-Wethouder</span>
+            <h3>Albert Holtland</h3>
+            <p>Jurist van beroep. Oud-wethouder (2018&ndash;2022). 36 jaar ervaring in lokale en provinciale politiek als Statenlid, raadslid, fractievoorzitter, vicevoorzitter van de raad en commissievoorzitter.</p>
+          </div>
+        </div>
+
+        <!-- Ellen Koersen -->
+        <div class="team-card reveal delay-3">
+          <div class="team-photo-wrap">
+            <img src="ellen.jpg" alt="Ellen Koersen">
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-info">
+            <span class="team-role">Fractiesecretaris</span>
+            <h3>Ellen Koersen</h3>
+            <p>Woont in Wilsum. Boerendochter met diverse opleidingen en vaardigheden. Zeer actief in de gemeenschap. Thema's: wonen, werken, cultuur, communicatie en sociale vraagstukken.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-bottom-row">
+        <!-- Henk Prinsen -->
+        <div class="team-card reveal delay-4">
+          <div class="team-photo-wrap">
+            <img src="henk.jpg" alt="Henk Prinsen">
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-info">
+            <span class="team-role">Raadslid &amp; Medeoprichter</span>
+            <h3>Henk Prinsen</h3>
+            <p>Ervaren raadslid en medeoprichter van Hart voor Kampen. Zet zich al jarenlang met passie in voor de belangen van alle inwoners van onze gemeente.</p>
+          </div>
+        </div>
+
+        <!-- Remco van Veen -->
+        <div class="team-card featured reveal delay-5">
+          <span class="team-badge-new">NIEUW!</span>
+          <div class="team-photo-wrap">
+            <img src="remco.jpg" alt="Remco van Veen">
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-info">
+            <span class="team-role">Kandidaat</span>
+            <h3>Remco van Veen</h3>
+            <p>Betrokken Kampenaar met frisse energie. Versterkt het team met zijn kennis, netwerk en drive om Kampen mooier te maken voor alle inwoners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8. DIT HEBBEN WIJ BEREIKT
+       ============================================================ -->
+  <section id="bereikt" class="achievements">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Resultaten</span>
+        <h2>Dit hebben wij bereikt</h2>
+        <p>Concrete resultaten waar wij trots op zijn</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4><span class="check-icon">&#10003;</span> Energie-compensatie voor kwetsbare inwoners gerealiseerd</h4>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4><span class="check-icon">&#10003;</span> Vischrookerij Van Heerde en Reumer behouden voor Kampen</h4>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4><span class="check-icon">&#10003;</span> Motie recyclbare bekers bij evenementen aangenomen</h4>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4><span class="check-icon">&#10003;</span> Motie Circulair Bouwen en Oogsten aangenomen (27 maart)</h4>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4><span class="check-icon">&#10003;</span> Motie camera-toezicht Station Kampen Zuid (met SGP, VVD, CDA)</h4>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4><span class="check-icon">&#10003;</span> Gast van de Raad voortgezet &mdash; unaniem aangenomen</h4>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4><span class="check-icon">&#10003;</span> Biodiversiteit op de kaart gezet in gemeentelijk beleid</h4>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4><span class="check-icon">&#10003;</span> Beheerder Kampereiland aangesteld</h4>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4><span class="check-icon">&#10003;</span> Groene Karavaan van de Provincie naar Kampen gehaald</h4>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4><span class="check-icon">&#10003;</span> Bloemen voor Bijen project &mdash; raadsbesluit oktober 2020</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9. NIEUWS / RAADSPRAAT
+       ============================================================ -->
+  <section id="nieuws" class="news">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Actueel</span>
+        <h2>Nieuws &amp; Raadspraat</h2>
+        <p>Blijf op de hoogte van onze activiteiten en standpunten</p>
+      </div>
+
+      <!-- Actueel Nieuws -->
+      <div class="news-subsection reveal">
+        <h3 class="news-section-title">Laatste Nieuws</h3>
+        <div class="news-grid">
+          <div class="news-card featured-news">
+            <span class="news-featured-badge">Uitgelicht</span>
+            <div class="news-date">21 februari 2026</div>
+            <h3>Remco van Veen nieuwe kandidaat voor Hart voor Kampen!</h3>
+            <p>Hart voor Kampen verwelkomt Remco van Veen als nieuwe kandidaat op de kieslijst. Met zijn betrokkenheid bij de lokale gemeenschap en frisse blik is hij een waardevolle aanvulling.</p>
+          </div>
+
+          <div class="news-card">
+            <div class="news-date">6 februari 2026</div>
+            <h3>Kandidatenlijsten vastgesteld: Hart voor Kampen lijst 8</h3>
+            <p>De kandidatenlijsten voor de gemeenteraadsverkiezingen zijn officieel vastgesteld. Hart voor Kampen doet mee als lijst 8 met een sterk team.</p>
+          </div>
+
+          <div class="news-card">
+            <div class="news-date">8 december 2025</div>
+            <h3>Nardus Koster unaniem als lijsttrekker gekozen</h3>
+            <p>Tijdens de ledenvergadering is Nardus Koster unaniem naar voren geschoven als lijsttrekker. De volledige kandidatenlijst met twaalf kandidaten is goedgekeurd.</p>
+          </div>
+
+          <div class="news-card">
+            <div class="news-date">November 2025</div>
+            <h3>Vragen over veiligheid stadsgracht</h3>
+            <p>Fractievoorzitter Nardus Koster ontvangt meldingen over mogelijke risico's langs de Burgel en vraagt het college om een structurele veiligheidsinventarisatie.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Raadspraat Columns -->
+      <div class="news-subsection reveal">
+        <h3 class="news-section-title">Raadspraat Columns</h3>
+        <div class="news-grid">
+          <div class="news-card">
+            <div class="news-date">6 januari 2026</div>
+            <h3>&ldquo;De beste wensen...&rdquo;</h3>
+            <p>Terugblik op het afgelopen jaar en vooruitblik op de gemeenteraadsverkiezingen van 2026.</p>
+            <div class="news-author">
+              <span class="news-author-dot"></span> Albert Holtland
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-date">28 oktober 2025</div>
+            <h3>&ldquo;Een sluitende begroting... maar hoe dan?&rdquo;</h3>
+            <p>Kritische analyse van de gemeentebegroting en de keuzes die het college maakt.</p>
+            <div class="news-author">
+              <span class="news-author-dot"></span> Albert Holtland
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-date">20 augustus 2025</div>
+            <h3>&ldquo;Langjarige visie (of juist het gebrek daaraan)...&rdquo;</h3>
+            <p>Over de noodzaak van een duidelijke langetermijnvisie voor de gemeente Kampen.</p>
+            <div class="news-author">
+              <span class="news-author-dot"></span> John van Weeghel
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-date">10 juni 2025</div>
+            <h3>&ldquo;Gemiste kans...&rdquo;</h3>
+            <p>Reflectie op kansen die de gemeente heeft laten liggen en hoe het beter kan.</p>
+            <div class="news-author">
+              <span class="news-author-dot"></span> Albert Holtland
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-date">2 april 2025</div>
+            <h3>&ldquo;SGP opent de deur voor betaald parkeren op zondag&rdquo;</h3>
+            <p>Hart voor Kampen is tegen betaald parkeren op zondag. Een kritische blik op de SGP-voorstellen.</p>
+            <div class="news-author">
+              <span class="news-author-dot"></span> Nardus Koster
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-date">21 januari 2025</div>
+            <h3>&ldquo;Een betrouwbare en consistente overheid...&rdquo;</h3>
+            <p>Over het belang van betrouwbaarheid en consistentie in het gemeentelijk bestuur.</p>
+            <div class="news-author">
+              <span class="news-author-dot"></span> Albert Holtland
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10. QUOTE SECTION (Parallax)
+       ============================================================ -->
+  <section class="quote-section">
+    <div class="quote-bg"></div>
+    <div class="quote-overlay"></div>
+    <div class="quote-content reveal-scale">
+      <div class="quote-mark">&ldquo;</div>
+      <blockquote>
+        Kampen is meer dan een plek op de kaart. Het is onze thuis, onze trots, ons hart. En daar zetten wij ons elke dag voor in.
+      </blockquote>
+      <div class="quote-author">&mdash; <span>Nardus Koster</span>, Fractievoorzitter Hart voor Kampen</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       11. DOE MEE / CTA
+       ============================================================ -->
+  <section id="doe-mee" class="cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <h2 class="reveal">18 Maart 2026: <span class="orange">Stem Lijst 8!</span></h2>
+        <p class="cta-subtitle reveal">Lokale vertegenwoordiging, korte lijnen, transparantie en burgerparticipatie. Samen maken we Kampen mooier.</p>
+
+        <div class="cta-cards">
+          <div class="cta-card reveal delay-1">
+            <div class="cta-card-icon">&#128188;</div>
+            <h3>Word Lid</h3>
+            <p>Sluit je aan bij een groeiende lokale beweging en draag bij aan de toekomst van Kampen.</p>
+          </div>
+          <div class="cta-card reveal delay-2">
+            <div class="cta-card-icon">&#128150;</div>
+            <h3>Word Donor</h3>
+            <p>Steun onze campagne financieel. Als ANBI-stichting zijn giften aan Hart voor Kampen fiscaal aftrekbaar.</p>
+          </div>
+          <div class="cta-card reveal delay-3">
+            <div class="cta-card-icon">&#127937;</div>
+            <h3>Word Vrijwilliger</h3>
+            <p>Help mee met flyeren, campagnevoeren en het verspreiden van onze boodschap in uw wijk.</p>
+          </div>
+        </div>
+
+        <div class="anbi-notice reveal">
+          &#9989; ANBI-status sinds 7 maart 2022 &mdash; Uw giften zijn fiscaal aftrekbaar
+        </div>
+
+        <div class="cta-contact-line reveal">
+          Neem contact op: <a href="mailto:info@hartvoorkampen.nl">info@hartvoorkampen.nl</a> of bel Nardus: <a href="tel:0611086171">06-11 08 61 71</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       12. CONTACT
+       ============================================================ -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Contact</span>
+        <h2>Neem contact met ons op</h2>
+        <p>Wij horen graag van u. Of u nu een vraag, idee of klacht heeft &mdash; wij staan voor u klaar.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <h3>Rechtstreeks bereikbaar</h3>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>E-mail</strong>
+              <a href="mailto:info@hartvoorkampen.nl">info@hartvoorkampen.nl</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Nardus Koster</strong>
+              <a href="tel:0611086171">06-11 08 61 71</a><br>
+              <a href="mailto:nardus@hartvoorkampen.nl">nardus@hartvoorkampen.nl</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Website</strong>
+              <a href="https://www.hartvoorkampen.nl" target="_blank" rel="noopener">www.hartvoorkampen.nl</a>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://x.com/hartvoorkampen" target="_blank" rel="noopener" class="social-link" aria-label="X / Twitter">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#standpunten">Standpunten</a></li>
-                <li><a href="#over-ons">Over Ons</a></li>
-                <li><a href="#team">Ons Team</a></li>
-                <li><a href="#nieuws">Nieuws</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#contact" class="btn btn-nav">Word Lid</a>
-            <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+            <a href="https://www.instagram.com/hartvoorkampen/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="white" stroke="none"/></svg>
+            </a>
+            <a href="https://www.facebook.com/hartvoorkampen" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
         </div>
-    </nav>
 
-    <!-- Hero -->
-    <section id="home" class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <span class="hero-badge">Gemeenteraadsverkiezingen 18 maart 2026 &mdash; Lijst 8</span>
-            <h1>Lokale vertegenwoordiging,<br>korte lijnen, <span class="highlight">daadkrachtig</span> bestuur</h1>
-            <p>Hart voor Kampen maakt van Kampen de beste plek om te wonen, ondernemen en recreeren. Met transparantie, burgerparticipatie en meer dan 100 jaar gecombineerde politieke ervaring.</p>
-            <div class="hero-buttons">
-                <a href="#standpunten" class="btn btn-primary">Ons Programma 2026-2030</a>
-                <a href="#contact" class="btn btn-outline">Sluit Je Aan</a>
+        <div class="contact-form reveal-right">
+          <h3>Stuur ons een bericht</h3>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="naam">Naam *</label>
+                <input type="text" id="naam" name="naam" placeholder="Uw naam" required>
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input type="email" id="email" name="email" placeholder="uw@email.nl" required>
+              </div>
             </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="wijk">Wijk / Kern</label>
+                <select id="wijk" name="wijk">
+                  <option value="">Selecteer uw wijk...</option>
+                  <option value="binnenstad">Binnenstad Kampen</option>
+                  <option value="brunnepe">Brunnepe</option>
+                  <option value="onderdijks">Onderdijks</option>
+                  <option value="bovenhaven">Bovenhaven</option>
+                  <option value="hanzewijk">Hanzewijk</option>
+                  <option value="flevowijk">Flevowijk</option>
+                  <option value="stationskwartier">Stationskwartier</option>
+                  <option value="noordelijk-kampen">Noordelijk Kampen</option>
+                  <option value="ijsselmuiden">IJsselmuiden</option>
+                  <option value="grafhorst">Grafhorst</option>
+                  <option value="kamperveen">Kamperveen</option>
+                  <option value="wilsum">Wilsum</option>
+                  <option value="zalk">Zalk</option>
+                  <option value="sheerenbroek">'s Heerenbroek</option>
+                  <option value="kampereiland">Kampereiland</option>
+                  <option value="anders">Anders</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="onderwerp">Onderwerp</label>
+                <select id="onderwerp" name="onderwerp">
+                  <option value="">Kies een onderwerp...</option>
+                  <option value="vraag">Algemene vraag</option>
+                  <option value="lid">Lid worden</option>
+                  <option value="vrijwilliger">Vrijwilliger worden</option>
+                  <option value="donatie">Donatie / ANBI</option>
+                  <option value="melding">Melding doen</option>
+                  <option value="idee">Idee delen</option>
+                  <option value="anders">Anders</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="bericht">Bericht *</label>
+              <textarea id="bericht" name="bericht" placeholder="Uw bericht aan Hart voor Kampen..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Verstuur Bericht</button>
+          </form>
         </div>
-        <div class="hero-credit">Foto: Zicht op Kampen vanaf de Stadsbrug &mdash; Wikimedia Commons (CC)</div>
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="#ffffff"/>
-            </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       13. FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <img src="hvFoWrmd_400x400.jpg" alt="Hart voor Kampen">
+            <span>Hart voor Kampen</span>
+          </div>
+          <p>Onafhankelijke lokale partij voor de gemeente Kampen. Opgericht in 2018. Lokale vertegenwoordiging, korte lijnen, daadkrachtig bestuur, transparantie en burgerparticipatie. ANBI-geregistreerd.</p>
         </div>
-    </section>
 
-    <!-- Kernwaarden -->
-    <section class="kernwaarden">
-        <div class="container">
-            <div class="kernwaarden-grid">
-                <div class="kernwaarde">
-                    <div class="kernwaarde-icon">&#128101;</div>
-                    <h3>Burgerparticipatie</h3>
-                    <p>Inwoners betrekken bij alles wat in hun leefomgeving gebeurt</p>
-                </div>
-                <div class="kernwaarde">
-                    <div class="kernwaarde-icon">&#128587;</div>
-                    <h3>Transparantie</h3>
-                    <p>Wij zijn voor volstrekte openbaarheid van bestuur</p>
-                </div>
-                <div class="kernwaarde">
-                    <div class="kernwaarde-icon">&#9889;</div>
-                    <h3>Daadkracht</h3>
-                    <p>Korte lijnen en slagvaardig bestuur voor snelle resultaten</p>
-                </div>
-                <div class="kernwaarde">
-                    <div class="kernwaarde-icon">&#127968;</div>
-                    <h3>Lokaal Eerst</h3>
-                    <p>Niet gebonden aan landelijke partijlijnen &mdash; puur voor Kampen</p>
-                </div>
-            </div>
+        <div>
+          <h4>Pagina's</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#programma">Programma</a></li>
+            <li><a href="#over-ons">Over Ons</a></li>
+            <li><a href="#team">Ons Team</a></li>
+            <li><a href="#bereikt">Bereikt</a></li>
+            <li><a href="#nieuws">Nieuws</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </div>
-    </section>
 
-    <!-- Nieuw Kandidaat Banner -->
-    <section class="kandidaat-banner">
-        <div class="container kandidaat-content">
-            <div class="kandidaat-badge">Nieuw op de lijst!</div>
-            <div class="kandidaat-grid">
-                <div class="kandidaat-avatar">
-                    <img src="remco.jpg" alt="Remco van Veen">
-                </div>
-                <div class="kandidaat-info">
-                    <h2>Remco van Veen versterkt Hart voor Kampen</h2>
-                    <p>Wij zijn trots om Remco van Veen te verwelkomen als nieuwe kandidaat op onze lijst voor de gemeenteraadsverkiezingen van 18 maart 2026. Remco is een betrokken Kampenaar die met zijn kennis en ervaring een waardevolle aanvulling vormt voor ons team.</p>
-                    <p>Met frisse energie en een sterk netwerk zet Remco zich in voor de belangen van alle inwoners van onze mooie gemeente. Zijn focus ligt op het verbinden van mensen en het versterken van de lokale gemeenschap.</p>
-                    <div class="kandidaat-links">
-                        <a href="https://www.linkedin.com/in/remco-van-veen-91a676131/" target="_blank" class="btn btn-primary">Bekijk LinkedIn Profiel</a>
-                        <a href="#team" class="btn btn-outline-dark">Ontmoet het hele team</a>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <h4>Thema's</h4>
+          <ul>
+            <li><a href="#programma">Wonen &amp; Doorstroming</a></li>
+            <li><a href="#programma">Veiligheid &amp; Leefbaarheid</a></li>
+            <li><a href="#programma">Ouderen &amp; Zorg</a></li>
+            <li><a href="#programma">Biodiversiteit &amp; Groen</a></li>
+            <li><a href="#programma">Financi&euml;n &amp; Bestuur</a></li>
+            <li><a href="#programma">Ondernemen &amp; Centrum</a></li>
+            <li><a href="#programma">Parkeren</a></li>
+            <li><a href="#programma">Kampereiland</a></li>
+          </ul>
         </div>
-    </section>
 
-    <!-- Standpunten -->
-    <section id="standpunten" class="standpunten">
-        <div class="container">
-            <h2 class="section-title">Ons Programma 2026 - 2030</h2>
-            <p class="section-subtitle">Waar wij voor staan &mdash; voor alle wijken en kernen in de gemeente Kampen</p>
-            <div class="standpunten-grid">
-                <div class="standpunt-card">
-                    <div class="standpunt-nummer">01</div>
-                    <div class="standpunt-content">
-                        <h3>Wonen & Doorstroming</h3>
-                        <p>Maximaal gebruik maken van wettelijke mogelijkheden om beweging in de woningmarkt te krijgen. Ook (middel)dure woningen voor doorstromers in aanmerking laten komen, zodat goedkopere woningen voor starters vrijkomen.</p>
-                        <ul class="standpunt-punten">
-                            <li>Meer betaalbare woningen voor starters en ouderen</li>
-                            <li>Doorstroming bevorderen in alle segmenten</li>
-                            <li>Bouwen in Kampen, IJsselmuiden en alle kernen</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="standpunt-card">
-                    <div class="standpunt-nummer">02</div>
-                    <div class="standpunt-content">
-                        <h3>Veiligheid & Leefbaarheid</h3>
-                        <p>Wijken ontwerpen volgens het Politiekeurmerk Veilig Wonen. Aandacht voor zowel verkeersveiligheid als sociale veiligheid, met goede straatverlichting en buurtpreventie.</p>
-                        <ul class="standpunt-punten">
-                            <li>Structurele veiligheidsinventarisaties</li>
-                            <li>Aanpak woonoverlast en buurtproblemen</li>
-                            <li>Veilige stadsgracht en openbare ruimte</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="standpunt-card">
-                    <div class="standpunt-nummer">03</div>
-                    <div class="standpunt-content">
-                        <h3>Ouderen & Zorg</h3>
-                        <p>Ouderen verdienen veilige, prettige woningen om zelfstandig te kunnen blijven wonen. Aandacht voor woningaanpassingen en sociale en fysieke veiligheid in de buurt.</p>
-                        <ul class="standpunt-punten">
-                            <li>Levensloopbestendig wonen bevorderen</li>
-                            <li>Mantelzorgers ondersteunen</li>
-                            <li>Wijkteams en korte lijnen in de zorg</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="standpunt-card">
-                    <div class="standpunt-nummer">04</div>
-                    <div class="standpunt-content">
-                        <h3>Biodiversiteit & Groen</h3>
-                        <p>Kampen moet groener. Dankzij Hart voor Kampen is er al een beheerder voor Kampereiland aangesteld en is de Groene Karavaan van de Provincie naar Kampen gekomen.</p>
-                        <ul class="standpunt-punten">
-                            <li>Meer groen en biodiversiteit in de stad</li>
-                            <li>Vergroening van wijken stimuleren</li>
-                            <li>Respect voor het landschap en de IJssel</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="standpunt-card">
-                    <div class="standpunt-nummer">05</div>
-                    <div class="standpunt-content">
-                        <h3>Financien & Bestuur</h3>
-                        <p>Dividenduitkeringen van ROVA moeten ten goede komen aan de inwoners, bijvoorbeeld door verlaging van de afvalstoffenheffing. Minimaal externe inhuur van bestuurscapaciteit.</p>
-                        <ul class="standpunt-punten">
-                            <li>ROVA-dividend terug naar de burger</li>
-                            <li>Minder externe inhuur, meer eigen kracht</li>
-                            <li>Samenwerking met buurgemeenten</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="standpunt-card">
-                    <div class="standpunt-nummer">06</div>
-                    <div class="standpunt-content">
-                        <h3>Ondernemen & Centrum</h3>
-                        <p>De historische binnenstad van Kampen verdient het om te bruisen. Steun voor lokale ondernemers, cultuur, detailhandel en een aantrekkelijk winkel- en horecaklimaat.</p>
-                        <ul class="standpunt-punten">
-                            <li>Steun voor lokale winkeliers en horeca</li>
-                            <li>Culturele evenementen bevorderen</li>
-                            <li>Boeren perspectief bieden</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <h4>Volg Ons</h4>
+          <ul>
+            <li><a href="https://x.com/hartvoorkampen" target="_blank" rel="noopener">X / Twitter</a></li>
+            <li><a href="https://www.instagram.com/hartvoorkampen/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/hartvoorkampen" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.hartvoorkampen.nl/" target="_blank" rel="noopener">Offici&euml;le Website</a></li>
+          </ul>
         </div>
-    </section>
+      </div>
 
-    <!-- Over Ons -->
-    <section id="over-ons" class="over-ons">
-        <div class="container over-ons-grid">
-            <div class="over-ons-visual">
-                <div class="visual-card">
-                    <div class="visual-heart">&hearts;</div>
-                    <span>Sinds 2018</span>
-                    <p>Actief voor<br>Kampen</p>
-                </div>
-            </div>
-            <div class="over-ons-text">
-                <h2 class="section-title left">Over Hart voor Kampen</h2>
-                <p class="over-ons-intro">Hart voor Kampen is een onafhankelijke lokale partij, opgericht in 2018 door ervaren politici die zich volledig inzetten voor de belangen van alle inwoners van de gemeente Kampen.</p>
-                <p>De partij is ontstaan toen prominente leden van Gemeente Belang Kampen (GBK) &mdash; waaronder Nardus Koster, Albert Holtland, Piet Bergstra, Henk Prinsen en Bruno Karel &mdash; besloten een eigen koers te varen. Zij vormden het hart van de oorspronkelijke partij en brachten samen meer dan 100 jaar politieke ervaring mee.</p>
-                <p>Wij zijn niet gebonden aan landelijke partijlijnen. Wij kijken puur naar wat goed is voor Kampen, IJsselmuiden, Grafhorst, 's Heerenbroek, Kamperveen, Wilsum en Zalk. Met lokale vertegenwoordiging, korte lijnen en daadkrachtig bestuur.</p>
-                <div class="over-ons-cijfers">
-                    <div class="cijfer">
-                        <strong>100+</strong>
-                        <span>Jaar ervaring samen</span>
-                    </div>
-                    <div class="cijfer">
-                        <strong>8</strong>
-                        <span>Lijstnummer</span>
-                    </div>
-                    <div class="cijfer">
-                        <strong>2018</strong>
-                        <span>Opgericht</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Hart voor Kampen | ANBI-geregistreerd | Lijst 8 &mdash; Gemeenteraadsverkiezingen 18 maart 2026</p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Team -->
-    <section id="team" class="team">
-        <div class="container">
-            <h2 class="section-title">Ons Team</h2>
-            <p class="section-subtitle">Ervaren en betrokken mensen die zich inzetten voor Kampen</p>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <img src="nardus.jpg" alt="Nardus Koster">
-                    </div>
-                    <h3>Nardus Koster</h3>
-                    <span class="team-role">Lijsttrekker &amp; Fractievoorzitter</span>
-                    <p>Ondernemer, 62 jaar, woont in de binnenstad van Kampen. Actief in de lokale politiek sinds 2005. Heeft een winkel op de Oudestraat. Focust op bereikbaarheid, veiligheid en leefbaarheid in de wijken.</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <img src="albert.jpg" alt="Albert Holtland">
-                    </div>
-                    <h3>Albert Holtland</h3>
-                    <span class="team-role">Commissielid &amp; Oud-Wethouder</span>
-                    <p>Jurist van beroep. Oud-wethouder (2018-2022). 36 jaar ervaring in lokale en provinciale politiek als Statenlid, raadslid, fractievoorzitter, vicevoorzitter van de raad en commissievoorzitter.</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <img src="ellen.jpg" alt="Ellen Koersen">
-                    </div>
-                    <h3>Ellen Koersen</h3>
-                    <span class="team-role">Fractiesecretaris</span>
-                    <p>Woont in Wilsum. Boerendochter met diverse opleidingen en vaardigheden. Zeer actief in de gemeenschap. Belangrijke thema's: wonen, werken, cultuur, communicatie en sociale vraagstukken.</p>
-                </div>
-                <div class="team-card">
-                    <div class="team-avatar">
-                        <img src="henk.jpg" alt="Henk Prinsen">
-                    </div>
-                    <h3>Henk Prinsen</h3>
-                    <span class="team-role">Raadslid</span>
-                    <p>Ervaren raadslid en medeoprichter van Hart voor Kampen. Zet zich al jaren in voor de belangen van de inwoners van onze gemeente.</p>
-                </div>
-                <div class="team-card team-card-new">
-                    <div class="new-badge">Nieuw!</div>
-                    <div class="team-avatar">
-                        <img src="remco.jpg" alt="Remco van Veen">
-                    </div>
-                    <h3>Remco van Veen</h3>
-                    <span class="team-role">Kandidaat</span>
-                    <p>Betrokken Kampenaar met frisse energie. Versterkt het team met zijn kennis, netwerk en drive om Kampen mooier te maken voor alle inwoners.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ============================================================
+       FLOATING CTA BUTTON
+       ============================================================ -->
+  <a href="#doe-mee" class="floating-cta" id="floatingCta">
+    <span class="btn-pulse"></span>
+    Stem Lijst 8
+  </a>
 
-    <!-- Quote -->
-    <section class="quote-section">
-        <div class="container">
-            <blockquote>
-                <p>"Kampen is meer dan een plek op de kaart. Het is onze thuis, onze trots, ons hart. En daar zetten wij ons elke dag voor in."</p>
-                <cite>- Nardus Koster, Fractievoorzitter Hart voor Kampen</cite>
-            </blockquote>
-        </div>
-    </section>
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    // ---- Countdown Timer to March 18, 2026 ----
+    (function() {
+      const electionDate = new Date('2026-03-18T07:30:00+01:00'); // Polling opens 7:30
+      const daysEl = document.getElementById('cd-days');
+      const hoursEl = document.getElementById('cd-hours');
+      const minutesEl = document.getElementById('cd-minutes');
+      const secondsEl = document.getElementById('cd-seconds');
 
-    <!-- Nieuws -->
-    <section id="nieuws" class="nieuws">
-        <div class="container">
-            <h2 class="section-title">Laatste Nieuws</h2>
-            <p class="section-subtitle">Blijf op de hoogte van onze activiteiten</p>
-            <div class="nieuws-grid">
-                <article class="nieuws-card featured">
-                    <div class="nieuws-label">Uitgelicht</div>
-                    <div class="nieuws-date">21 februari 2026</div>
-                    <h3>Remco van Veen nieuwe kandidaat voor Hart voor Kampen!</h3>
-                    <p>Hart voor Kampen verwelkomt Remco van Veen als nieuwe kandidaat op de kieslijst voor de gemeenteraadsverkiezingen van 18 maart 2026. Met zijn betrokkenheid bij de lokale gemeenschap en frisse blik op de toekomst is Remco een waardevolle aanvulling voor ons team. "Ik wil me graag inzetten voor een gemeente waar iedereen zich thuis voelt," aldus Remco.</p>
-                    <a href="https://www.linkedin.com/in/remco-van-veen-91a676131/" target="_blank" class="nieuws-link">Bekijk Remco's profiel &rarr;</a>
-                </article>
-                <article class="nieuws-card">
-                    <div class="nieuws-date">6 februari 2026</div>
-                    <h3>Kandidatenlijsten vastgesteld: Hart voor Kampen lijst 8</h3>
-                    <p>De kandidatenlijsten voor de gemeenteraadsverkiezingen zijn officieel vastgesteld. Hart voor Kampen doet mee als lijst 8 met een sterk team van ervaren en nieuwe kandidaten.</p>
-                    <a href="#" class="nieuws-link">Lees meer &rarr;</a>
-                </article>
-                <article class="nieuws-card">
-                    <div class="nieuws-date">8 december 2025</div>
-                    <h3>Nardus Koster lijsttrekker Hart voor Kampen</h3>
-                    <p>Tijdens de ledenvergadering is Nardus Koster unaniem naar voren geschoven als lijsttrekker. De volledige kandidatenlijst met twaalf kandidaten is goedgekeurd door de leden.</p>
-                    <a href="#" class="nieuws-link">Lees meer &rarr;</a>
-                </article>
-                <article class="nieuws-card">
-                    <div class="nieuws-date">15 november 2025</div>
-                    <h3>Hart voor Kampen stelt vragen over veiligheid stadsgracht</h3>
-                    <p>Fractievoorzitter Nardus Koster ontvangt meldingen over mogelijke risico's langs de Burgel en vraagt het college van B&W om een structurele veiligheidsinventarisatie.</p>
-                    <a href="#" class="nieuws-link">Lees meer &rarr;</a>
-                </article>
-            </div>
-        </div>
-    </section>
+      function updateCountdown() {
+        const now = new Date();
+        const diff = electionDate - now;
 
-    <!-- Bereikt -->
-    <section class="bereikt">
-        <div class="container">
-            <h2 class="section-title">Dit Hebben Wij Bereikt</h2>
-            <p class="section-subtitle">Concrete resultaten waar wij trots op zijn</p>
-            <div class="bereikt-grid">
-                <div class="bereikt-item">
-                    <div class="bereikt-icon">&#127795;</div>
-                    <h3>Biodiversiteit op de kaart</h3>
-                    <p>Nieuwe beheerder voor Kampereiland aangesteld en de Groene Karavaan van de Provincie naar Kampen gehaald.</p>
-                </div>
-                <div class="bereikt-item">
-                    <div class="bereikt-icon">&#127969;</div>
-                    <h3>Woningbouw versneld</h3>
-                    <p>Inzet voor doorstroming op de woningmarkt en meer mogelijkheden voor starters in alle kernen.</p>
-                </div>
-                <div class="bereikt-item">
-                    <div class="bereikt-icon">&#128274;</div>
-                    <h3>Veiligheid verbeterd</h3>
-                    <p>Structurele veiligheidsinventarisaties aangevraagd en aandacht voor de stadsgracht en openbare ruimte.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-        <div class="container cta-content">
-            <h2>18 Maart 2026: Stem Lijst 8<br>Hart voor Kampen!</h2>
-            <p>Lokale vertegenwoordiging, korte lijnen, transparantie en burgerparticipatie. Samen maken we Kampen mooier.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary btn-large">Word Lid</a>
-                <a href="#contact" class="btn btn-outline-dark btn-large">Neem Contact Op</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="contact">
-        <div class="container contact-grid">
-            <div class="contact-info">
-                <h2 class="section-title left">Contact</h2>
-                <p>Wij horen graag van u. Of u nu een vraag, idee of klacht heeft &mdash; wij staan voor u klaar.</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <span class="contact-icon">&#128205;</span>
-                        <div>
-                            <strong>Gemeente Kampen</strong>
-                            <p>Kampen, Overijssel</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">&#128231;</span>
-                        <div>
-                            <strong>E-mail</strong>
-                            <p>info@hartvoorkampen.nl</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">&#127760;</span>
-                        <div>
-                            <strong>Website</strong>
-                            <p>www.hartvoorkampen.nl</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="social-bar">
-                    <a href="https://x.com/hartvoorkampen" target="_blank" class="social-btn">X / Twitter</a>
-                    <a href="#" class="social-btn">Facebook</a>
-                </div>
-            </div>
-            <div class="contact-form-wrapper">
-                <h3>Stuur ons een bericht</h3>
-                <form class="contact-form" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="naam">Naam *</label>
-                        <input type="text" id="naam" name="naam" placeholder="Uw naam" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-mail *</label>
-                        <input type="email" id="email" name="email" placeholder="uw@email.nl" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="wijk">Wijk / Kern</label>
-                        <select id="wijk" name="wijk">
-                            <option value="">Selecteer uw wijk...</option>
-                            <option value="binnenstad">Binnenstad</option>
-                            <option value="brunnepe">Brunnepe</option>
-                            <option value="onderdijks">Onderdijks</option>
-                            <option value="hanzewijk">Hanzewijk</option>
-                            <option value="flevowijk">Flevowijk</option>
-                            <option value="ijsselmuiden">IJsselmuiden</option>
-                            <option value="grafhorst">Grafhorst</option>
-                            <option value="kamperveen">Kamperveen</option>
-                            <option value="wilsum">Wilsum</option>
-                            <option value="zalk">Zalk</option>
-                            <option value="sheerenbroek">'s Heerenbroek</option>
-                            <option value="anders">Anders</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="onderwerp">Onderwerp</label>
-                        <select id="onderwerp" name="onderwerp">
-                            <option value="">Kies een onderwerp...</option>
-                            <option value="vraag">Algemene vraag</option>
-                            <option value="lid">Lid worden</option>
-                            <option value="vrijwilliger">Vrijwilliger worden</option>
-                            <option value="melding">Melding doen</option>
-                            <option value="idee">Idee delen</option>
-                            <option value="anders">Anders</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="bericht">Bericht *</label>
-                        <textarea id="bericht" name="bericht" rows="5" placeholder="Uw bericht..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Verstuur Bericht</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h3><img src="hvFoWrmd_400x400.jpg" alt="Hart voor Kampen" class="footer-logo"> Hart voor Kampen</h3>
-                <p>Onafhankelijke lokale partij voor de gemeente Kampen. Opgericht in 2018. Lokale vertegenwoordiging, korte lijnen, daadkrachtig bestuur, transparantie en burgerparticipatie.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Pagina's</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#standpunten">Programma</a></li>
-                    <li><a href="#over-ons">Over Ons</a></li>
-                    <li><a href="#team">Ons Team</a></li>
-                    <li><a href="#nieuws">Nieuws</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Thema's</h4>
-                <ul>
-                    <li><a href="#standpunten">Wonen & Doorstroming</a></li>
-                    <li><a href="#standpunten">Veiligheid & Leefbaarheid</a></li>
-                    <li><a href="#standpunten">Ouderen & Zorg</a></li>
-                    <li><a href="#standpunten">Biodiversiteit & Groen</a></li>
-                    <li><a href="#standpunten">Financien & Bestuur</a></li>
-                    <li><a href="#standpunten">Ondernemen & Centrum</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Volg Ons</h4>
-                <ul>
-                    <li><a href="https://x.com/hartvoorkampen" target="_blank">X / Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="https://www.hartvoorkampen.nl/" target="_blank">Officiële Website</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 Hart voor Kampen. Alle rechten voorbehouden. | Lijst 8 &mdash; Gemeenteraadsverkiezingen 18 maart 2026</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile nav
-        document.querySelector('.nav-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    document.querySelector('.nav-links').classList.remove('active');
-                }
-            });
-        });
-
-        // Navbar scroll
-        window.addEventListener('scroll', function() {
-            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
-        });
-
-        // Scroll reveal
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.standpunt-card, .team-card, .nieuws-card, .kernwaarde, .bereikt-item').forEach(el => {
-            el.classList.add('reveal');
-            observer.observe(el);
-        });
-
-        // Form
-        function handleSubmit(e) {
-            e.preventDefault();
-            alert('Bedankt voor uw bericht! Wij nemen zo snel mogelijk contact met u op.');
-            e.target.reset();
+        if (diff <= 0) {
+          daysEl.textContent = '0';
+          hoursEl.textContent = '0';
+          minutesEl.textContent = '0';
+          secondsEl.textContent = '0';
+          return;
         }
-    </script>
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        daysEl.textContent = days;
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minutesEl.textContent = String(minutes).padStart(2, '0');
+        secondsEl.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+
+    // ---- Hero Particles ----
+    (function() {
+      const container = document.getElementById('heroParticles');
+      const particleCount = 30;
+      for (let i = 0; i < particleCount; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.width = (Math.random() * 4 + 2) + 'px';
+        p.style.height = p.style.width;
+        p.style.animationDuration = (Math.random() * 12 + 8) + 's';
+        p.style.animationDelay = (Math.random() * 8) + 's';
+        p.style.opacity = Math.random() * 0.3 + 0.05;
+        container.appendChild(p);
+      }
+    })();
+
+    // ---- Navbar Scroll Effect ----
+    (function() {
+      const navbar = document.getElementById('navbar');
+      const floatingCta = document.getElementById('floatingCta');
+      let lastScroll = 0;
+
+      window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        navbar.classList.toggle('scrolled', scrollY > 60);
+
+        // Show floating CTA after hero
+        if (scrollY > window.innerHeight * 0.7) {
+          floatingCta.classList.add('show');
+        } else {
+          floatingCta.classList.remove('show');
+        }
+
+        lastScroll = scrollY;
+      }, { passive: true });
+    })();
+
+    // ---- Mobile Menu ----
+    (function() {
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      const overlay = document.getElementById('mobileOverlay');
+
+      function closeMenu() {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function openMenu() {
+        hamburger.classList.add('active');
+        navLinks.classList.add('open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      hamburger.addEventListener('click', function() {
+        if (navLinks.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      overlay.addEventListener('click', closeMenu);
+
+      // Close menu on link click
+      navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
+
+    // ---- Smooth Scroll for all anchors ----
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // ---- Scroll Reveal (IntersectionObserver) ----
+    (function() {
+      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    // ---- Program Tabs ----
+    (function() {
+      const tabs = document.querySelectorAll('.program-tab');
+      const panels = document.querySelectorAll('.program-panel');
+
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          const target = this.getAttribute('data-tab');
+
+          // Remove active from all
+          tabs.forEach(function(t) { t.classList.remove('active'); });
+          panels.forEach(function(p) { p.classList.remove('active'); });
+
+          // Add active to clicked
+          this.classList.add('active');
+          document.getElementById('tab-' + target).classList.add('active');
+        });
+      });
+    })();
+
+    // ---- Active Nav Link ----
+    (function() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links li a[href^="#"]');
+
+      function updateActiveLink() {
+        const scrollY = window.scrollY + 120;
+        sections.forEach(function(section) {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          const id = section.getAttribute('id');
+
+          if (scrollY >= top && scrollY < top + height) {
+            navLinks.forEach(function(link) {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveLink, { passive: true });
+    })();
+
+    // ---- Contact Form Handler ----
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.submit-btn');
+      const originalText = btn.textContent;
+      btn.textContent = 'Verzonden!';
+      btn.style.background = '#4caf50';
+
+      setTimeout(function() {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
 
 </body>
 </html>
