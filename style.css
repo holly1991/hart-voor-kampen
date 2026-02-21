@@ -164,11 +164,19 @@ a {
     font-weight: 800;
     color: var(--white);
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.logo-heart {
-    color: #ff5252;
-    font-size: 1.2em;
+.logo-img {
+    height: 42px;
+    width: auto;
+    border-radius: 4px;
+}
+
+.navbar.scrolled .logo-img {
+    height: 36px;
 }
 
 .logo-accent {
@@ -1033,8 +1041,12 @@ blockquote cite {
     margin-bottom: 16px;
 }
 
-.footer-heart {
-    color: #ff5252;
+.footer-logo {
+    height: 36px;
+    width: auto;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-right: 6px;
 }
 
 .footer h4 {
