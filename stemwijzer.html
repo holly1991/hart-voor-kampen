@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stemwijzer - Hart voor Kampen | Lijst 8</title>
+  <meta name="description" content="Doe de stemwijzer en ontdek of Hart voor Kampen bij jou past!">
+  <link rel="icon" type="image/jpeg" href="hvFoWrmd_400x400.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="hvFoWrmd_400x400.jpg" alt="Hart voor Kampen Logo">
+        <span class="nav-brand-text">Hart voor <span class="accent">Kampen</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programma.html">Programma</a></li>
+        <li><a href="over-ons.html">Over Ons</a></li>
+        <li><a href="bereikt.html">Bereikt</a></li>
+        <li><a href="nieuws.html">Nieuws</a></li>
+        <li><a href="stemwijzer.html" class="active">Stemwijzer</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta-mobile"><a href="contact.html" class="nav-cta">Stem Lijst 8</a></li>
+      </ul>
+      <div class="nav-right-group">
+        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Donkere modus">
+          <span class="icon-sun">&#9788;</span>
+          <span class="icon-moon">&#9790;</span>
+        </button>
+        <a href="contact.html" class="nav-cta nav-cta-desktop">Stem Lijst 8</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="badge">Stemwijzer</span>
+      <h1>Past Hart voor Kampen bij jou?</h1>
+      <p>Beantwoord 6 vragen en ontdek het!</p>
+    </div>
+  </section>
+
+  <!-- STEMWIJZER -->
+  <section id="stemwijzer" class="stemwijzer">
+    <div class="container">
+      <div class="stemwijzer-inner reveal" id="stemwijzerQuiz">
+        <div class="stemwijzer-header">
+          <h3>Stemwijzer</h3>
+          <p>Ontdek in 6 vragen of Hart voor Kampen bij jou past</p>
+        </div>
+
+        <div class="stemwijzer-progress">
+          <div class="stemwijzer-progress-bar" id="quizProgressBar" style="width: 0%"></div>
+        </div>
+        <div class="stemwijzer-progress-text" id="quizProgressText">Vraag 1 van 6</div>
+
+        <div class="stemwijzer-body" id="quizBody">
+          <div class="stemwijzer-question active" data-question="0">
+            <span class="stemwijzer-question-category">Burgerparticipatie</span>
+            <h4>De gemeente moet inwoners actief betrekken bij beslissingen in hun wijk</h4>
+            <div class="stemwijzer-options">
+              <button class="stemwijzer-option" data-value="4">Helemaal mee eens</button>
+              <button class="stemwijzer-option" data-value="3">Mee eens</button>
+              <button class="stemwijzer-option" data-value="2">Neutraal</button>
+              <button class="stemwijzer-option" data-value="1">Mee oneens</button>
+            </div>
+          </div>
+
+          <div class="stemwijzer-question" data-question="1">
+            <span class="stemwijzer-question-category">Wonen</span>
+            <h4>Betaalbare woningen voor starters en ouderen moeten prioriteit krijgen</h4>
+            <div class="stemwijzer-options">
+              <button class="stemwijzer-option" data-value="4">Helemaal mee eens</button>
+              <button class="stemwijzer-option" data-value="3">Mee eens</button>
+              <button class="stemwijzer-option" data-value="2">Neutraal</button>
+              <button class="stemwijzer-option" data-value="1">Mee oneens</button>
+            </div>
+          </div>
+
+          <div class="stemwijzer-question" data-question="2">
+            <span class="stemwijzer-question-category">Financi&euml;n</span>
+            <h4>Dividenduitkeringen van ROVA moeten terugvloeien naar inwoners</h4>
+            <div class="stemwijzer-options">
+              <button class="stemwijzer-option" data-value="4">Helemaal mee eens</button>
+              <button class="stemwijzer-option" data-value="3">Mee eens</button>
+              <button class="stemwijzer-option" data-value="2">Neutraal</button>
+              <button class="stemwijzer-option" data-value="1">Mee oneens</button>
+            </div>
+          </div>
+
+          <div class="stemwijzer-question" data-question="3">
+            <span class="stemwijzer-question-category">Groen</span>
+            <h4>Kampen moet investeren in meer groen en biodiversiteit</h4>
+            <div class="stemwijzer-options">
+              <button class="stemwijzer-option" data-value="4">Helemaal mee eens</button>
+              <button class="stemwijzer-option" data-value="3">Mee eens</button>
+              <button class="stemwijzer-option" data-value="2">Neutraal</button>
+              <button class="stemwijzer-option" data-value="1">Mee oneens</button>
+            </div>
+          </div>
+
+          <div class="stemwijzer-question" data-question="4">
+            <span class="stemwijzer-question-category">Veiligheid</span>
+            <h4>Veiligheid en leefbaarheid in de wijken verdienen meer aandacht</h4>
+            <div class="stemwijzer-options">
+              <button class="stemwijzer-option" data-value="4">Helemaal mee eens</button>
+              <button class="stemwijzer-option" data-value="3">Mee eens</button>
+              <button class="stemwijzer-option" data-value="2">Neutraal</button>
+              <button class="stemwijzer-option" data-value="1">Mee oneens</button>
+            </div>
+          </div>
+
+          <div class="stemwijzer-question" data-question="5">
+            <span class="stemwijzer-question-category">Lokaal</span>
+            <h4>Een lokale partij kan beter opkomen voor Kampen dan een landelijke partij</h4>
+            <div class="stemwijzer-options">
+              <button class="stemwijzer-option" data-value="4">Helemaal mee eens</button>
+              <button class="stemwijzer-option" data-value="3">Mee eens</button>
+              <button class="stemwijzer-option" data-value="2">Neutraal</button>
+              <button class="stemwijzer-option" data-value="1">Mee oneens</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div class="stemwijzer-result" id="quizResult">
+          <div class="stemwijzer-result-emoji" id="quizResultEmoji"></div>
+          <h4 id="quizResultTitle"></h4>
+          <p id="quizResultText"></p>
+          <div id="quizResultAction"></div>
+
+          <div class="stemwijzer-share">
+            <a class="stemwijzer-share-btn twitter" id="shareTwitter" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Deel op X
+            </a>
+            <a class="stemwijzer-share-btn whatsapp" id="shareWhatsApp" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a class="stemwijzer-share-btn facebook" id="shareFacebook" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+          </div>
+
+          <button class="stemwijzer-restart" id="quizRestart">Opnieuw beginnen</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <img src="hvFoWrmd_400x400.jpg" alt="Hart voor Kampen">
+            <span>Hart voor Kampen</span>
+          </div>
+          <p>Onafhankelijke lokale partij voor de gemeente Kampen. Opgericht in 2018. Lokale vertegenwoordiging, korte lijnen, daadkrachtig bestuur, transparantie en burgerparticipatie. ANBI-geregistreerd.</p>
+        </div>
+        <div>
+          <h4>Pagina's</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="programma.html">Programma</a></li>
+            <li><a href="over-ons.html">Over Ons</a></li>
+            <li><a href="bereikt.html">Bereikt</a></li>
+            <li><a href="stemwijzer.html">Stemwijzer</a></li>
+            <li><a href="nieuws.html">Nieuws</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Thema's</h4>
+          <ul>
+            <li><a href="programma.html">Wonen &amp; Doorstroming</a></li>
+            <li><a href="programma.html">Veiligheid &amp; Leefbaarheid</a></li>
+            <li><a href="programma.html">Ouderen &amp; Zorg</a></li>
+            <li><a href="programma.html">Biodiversiteit &amp; Groen</a></li>
+            <li><a href="programma.html">Financi&euml;n &amp; Bestuur</a></li>
+            <li><a href="programma.html">Ondernemen &amp; Centrum</a></li>
+            <li><a href="programma.html">Parkeren</a></li>
+            <li><a href="programma.html">Kampereiland</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Volg Ons</h4>
+          <ul>
+            <li><a href="https://x.com/hartvoorkampen" target="_blank" rel="noopener">X / Twitter</a></li>
+            <li><a href="https://www.instagram.com/hartvoorkampen/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/hartvoorkampen" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.hartvoorkampen.nl/" target="_blank" rel="noopener">Offici&euml;le Website</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Hart voor Kampen | ANBI-geregistreerd | Lijst 8 &mdash; Gemeenteraadsverkiezingen 18 maart 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ---- Cursor Glow ----
+    (function() {
+      var glow = document.getElementById('cursorGlow');
+      var mx = -200, my = -200, glowX = -200, glowY = -200;
+      document.addEventListener('mousemove', function(e) { mx = e.clientX; my = e.clientY; });
+      function updateGlow() { glowX += (mx - glowX) * 0.15; glowY += (my - glowY) * 0.15; glow.style.left = glowX + 'px'; glow.style.top = glowY + 'px'; requestAnimationFrame(updateGlow); }
+      updateGlow();
+      if ('ontouchstart' in window) glow.style.display = 'none';
+    })();
+
+    // ---- Mobile Menu ----
+    (function() {
+      var hamburger = document.getElementById('hamburger');
+      var navLinks = document.getElementById('navLinks');
+      var overlay = document.getElementById('mobileOverlay');
+      function closeMenu() { hamburger.classList.remove('active'); navLinks.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
+      function openMenu() { hamburger.classList.add('active'); navLinks.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+      hamburger.addEventListener('click', function() { if (navLinks.classList.contains('open')) closeMenu(); else openMenu(); });
+      overlay.addEventListener('click', closeMenu);
+      navLinks.querySelectorAll('a').forEach(function(link) { link.addEventListener('click', closeMenu); });
+    })();
+
+    // ---- Scroll Reveal ----
+    (function() {
+      var revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+      var observer = new IntersectionObserver(function(entries) { entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      revealElements.forEach(function(el) { observer.observe(el); });
+    })();
+
+    // ---- Stemwijzer Quiz ----
+    (function() {
+      var currentQuestion = 0;
+      var scores = [];
+      var totalQuestions = 6;
+      var progressBar = document.getElementById('quizProgressBar');
+      var progressText = document.getElementById('quizProgressText');
+      var quizBody = document.getElementById('quizBody');
+      var quizResult = document.getElementById('quizResult');
+      var questions = document.querySelectorAll('.stemwijzer-question');
+
+      var allOptions = document.querySelectorAll('.stemwijzer-option');
+      allOptions.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var value = parseInt(this.getAttribute('data-value'));
+          var questionEl = this.closest('.stemwijzer-question');
+          questionEl.querySelectorAll('.stemwijzer-option').forEach(function(b) { b.classList.remove('selected'); });
+          this.classList.add('selected');
+          scores[currentQuestion] = value;
+
+          setTimeout(function() {
+            currentQuestion++;
+            if (currentQuestion >= totalQuestions) {
+              showResult();
+            } else {
+              questionEl.classList.remove('active');
+              questionEl.classList.add('exit-left');
+              questions[currentQuestion].classList.add('active');
+              progressBar.style.width = ((currentQuestion) / totalQuestions * 100) + '%';
+              progressText.textContent = 'Vraag ' + (currentQuestion + 1) + ' van ' + totalQuestions;
+            }
+          }, 300);
+        });
+      });
+
+      function showResult() {
+        progressBar.style.width = '100%';
+        progressText.textContent = 'Resultaat';
+        quizBody.style.display = 'none';
+        quizResult.classList.add('active');
+
+        var totalScore = scores.reduce(function(a, b) { return a + b; }, 0);
+        var emoji = document.getElementById('quizResultEmoji');
+        var title = document.getElementById('quizResultTitle');
+        var text = document.getElementById('quizResultText');
+        var action = document.getElementById('quizResultAction');
+        var shareText = '';
+
+        if (totalScore >= 18) {
+          emoji.textContent = '\uD83C\uDF89';
+          title.textContent = 'Hart voor Kampen past perfect bij jou!';
+          text.textContent = 'Jouw idee\u00ebn sluiten naadloos aan bij onze visie voor Kampen. Samen maken we onze gemeente sterker!';
+          action.innerHTML = '<a href="contact.html" class="btn btn-primary" style="margin:8px;">Stem Lijst 8 op 18 maart!</a>';
+          shareText = 'Hart voor Kampen past perfect bij mij! Doe de stemwijzer en ontdek of het ook bij jou past.';
+        } else if (totalScore >= 12) {
+          emoji.textContent = '\uD83D\uDC4D';
+          title.textContent = 'Je deelt veel standpunten met Hart voor Kampen!';
+          text.textContent = 'Bekijk ons programma om meer te ontdekken over onze plannen voor Kampen.';
+          action.innerHTML = '<a href="programma.html" class="btn btn-primary" style="margin:8px;">Bekijk Ons Programma</a>';
+          shareText = 'Ik deel veel standpunten met Hart voor Kampen! Doe zelf de stemwijzer.';
+        } else {
+          emoji.textContent = '\uD83D\uDE4F';
+          title.textContent = 'Bedankt voor je deelname!';
+          text.textContent = 'Bekijk ons volledige programma \u2014 misschien verrassen we je nog.';
+          action.innerHTML = '<a href="programma.html" class="btn btn-outline-dark" style="margin:8px;">Bekijk Ons Programma</a>';
+          shareText = 'Ik deed de stemwijzer van Hart voor Kampen. Doe jij hem ook?';
+        }
+
+        var url = encodeURIComponent(window.location.href);
+        var shareEncoded = encodeURIComponent(shareText);
+        document.getElementById('shareTwitter').href = 'https://twitter.com/intent/tweet?text=' + shareEncoded + '&url=' + url;
+        document.getElementById('shareWhatsApp').href = 'https://wa.me/?text=' + shareEncoded + '%20' + url;
+        document.getElementById('shareFacebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + url + '&quote=' + shareEncoded;
+      }
+
+      document.getElementById('quizRestart').addEventListener('click', function() {
+        currentQuestion = 0;
+        scores = [];
+        quizBody.style.display = '';
+        quizResult.classList.remove('active');
+        progressBar.style.width = '0%';
+        progressText.textContent = 'Vraag 1 van 6';
+        questions.forEach(function(q) {
+          q.classList.remove('active', 'exit-left');
+          q.querySelectorAll('.stemwijzer-option').forEach(function(b) { b.classList.remove('selected'); });
+        });
+        questions[0].classList.add('active');
+      });
+    })();
+
+    // ---- Dark Mode ----
+    (function() {
+      var toggle = document.getElementById('darkModeToggle');
+      var body = document.body;
+      if (localStorage.getItem('hvk-dark-mode') === 'true') body.classList.add('dark-mode');
+      toggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        localStorage.setItem('hvk-dark-mode', body.classList.contains('dark-mode'));
+      });
+    })();
+  </script>
+
+</body>
+</html>
